@@ -7,9 +7,23 @@ Vue.use(Vuex)
     username: 'dddd',
     password: '',
     info:[{address:'elem1'},
-          {cellphone:'3330333'},
+          {cellphone:'33+(303)987-988'},
           {employer:true}
-          ]
+          ],
+    projects:[ {id:'id1',
+                 name:'name1',
+                 description:'descr1'
+               },
+               {id:'id2',
+                 name:'name2',
+                 description:'descr2'
+               },
+               {id:'id3',
+                 name:'name3',
+                 description:'descr3'
+               }
+             ]
+
   };
   const getters= {
     getUsername:state => {
@@ -17,6 +31,9 @@ Vue.use(Vuex)
     },
     getInfo:state=>{
         return state.info ;
+    },
+    getProjects:state=>{
+      return state.projects ;
     }
   };
   const mutations= {
@@ -32,7 +49,7 @@ Vue.use(Vuex)
   }
   
   };
-   
+
 export default {
     namespaced : true,
     state,
