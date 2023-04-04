@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { baseApiURL } from '@/config/env'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -10,45 +12,92 @@ Vue.use(Vuex)
     info:[{address:'elem1'},
           {cellphone:'33+(303)987-988'},
           {employer:true}
-          ],
-    projects:[ {id:'id1',
-                 name:'name1',
-                 description:'descr1'
-               },
-               {id:'id2',
-                 name:'name2',
-                 description:'descr2'
-               },
-               {id:'id3',
-                 name:'name3',
-                 description:'descr3'
-               }
-             ]*/
+          ],*/
+    listItems:[
+      {}
+    ],
+    product: {    
+              name:'',
+              description:'',
+              category:'' ,
+              picture:'' ,
+              quantity:'' ,
+    },
+    products:[{
+      /*
+      p1  : {    
+        name:'pr1',
+        description:'descr1',
+        category:'cat1' ,
+        picture:'pic1' ,
+        quantity:'qua1' ,
+      },
+      p2  : {    
+        name:'pr2',
+        description:'descr2',
+        category:'cat2' ,
+        picture:'pic2' ,
+        quantity:'qua2' ,
+      },
+      p3  : {    
+        name:'pr3',
+        description:'descr3',
+        category:'car3' ,
+        picture:'pic3' ,
+        quantity:'qua3',
+      },
+      p4  : {    
+        name:'pr4',
+        description:'descr3',
+        category:'car3' ,
+        picture:'pic3' ,
+        quantity:'qua3',
+      },
+      p5  : {    
+        name:'pr5',
+        description:'descr3',
+        category:'car3' ,
+        picture:'pic3' ,
+        quantity:'qua3',
+      }, 
+      p6  : {    
+        name:'pr6',
+        description:'descr3',
+        category:'car3' ,
+        picture:'pic3' ,
+        quantity:'qua3',
+      }*/
+    }]
 
   };
   const getters= {
-    /*
-    getUsername:state => {
-        return state.username
-    },
-    getInfo:state=>{
-        return state.info ;
-    },
-    getProjects:state=>{
-      return state.projects ;
-    }*/
+    getProducts:state=>{
+      return state.products ;
+    }
   };
   const mutations= {
+      setProduct :(state,other) =>{
+        state.product= other;
+      //  console.log( state.product);
+      },
   };
   const actions= {
-    /*
-    actionProfile : (context,profile) => {
-      setTimeout(()=>{
-          console.log("store->index::action::"+profile.username);
-          console.log(context);
-      },2000);
-    }*/
-  
+    actionLoadListProduct : (context,info) => {
+      console.log(info)
+      console.log(context)
+      //this.showLoader = true
+      axios.get(`${baseApiURL}/${info.page}/${info.recordsPerPage}`)
+      .then(response => {
+          info.showLoader = false
+          //listItems = response.data.products
+          state.products=response.data.products;
+          console.log(state.products)
+          return true;
+         // console.log("page-->  "+info.page+"size "+info.size+"showLoader   "+info.showLoader)
+          //this.totalPages = Math.ceil(response.data.totalPassengers / this.recordsPerPage) // Calculate total records
+          //this.totalRecords = response.data.totalPassengers
+      })
+    }
   };
    
 export default {
