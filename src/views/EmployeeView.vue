@@ -71,13 +71,15 @@ export default {
   methods: {
       
       ...mapActions({'actionLoadListProduct': 'product/actionLoadListProduct'}),
-      //...mapActions({'actionTotalProducts': 'product/actionTotalProducts'}),
+      ...mapActions({'actionTotalProducts': 'product/actionTotalProducts'}),
       loadListItem () {
       this.showLoader = true
       console.log(this.recordsPerPage)
       if(this.actionLoadListProduct({page:this.page,recordsPerPage: this.recordsPerPage , showLoader:this.showLoader})){
         this.showLoader = false
       }
+      this.actionLoadListProduct();
+
       this.totalPages = 4 // Calculate total records
       this.totalRecords = 20
       /*
