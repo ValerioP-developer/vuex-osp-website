@@ -4,7 +4,7 @@
     <ul class="flex-container">
       <!--
       <li v-for="item in getProducts" :key="item.id" class="flex-item">
-        <h4>Product: {{item.name}}</h4>
+      <h2>{{getTotalProducts}}</h2>
       </li> -->
       <li v-for="item in getProducts" :key="item.id" class="flex-item">
           <div class="card" >
@@ -63,45 +63,36 @@ export default {
     ...mapGetters({
         'getInfo' : 'profile/getInfo',
         'getProjects' : 'profile/getProjects',
-        'getProducts' : 'product/getProducts'
+        'getProducts' : 'product/getProducts',
+        'getTotalProducts' : 'product/getTotalProducts'
   }) },
   created () {
     this.loadListItem()
   },
   methods: {
-      
       ...mapActions({'actionLoadListProduct': 'product/actionLoadListProduct'}),
       ...mapActions({'actionTotalProducts': 'product/actionTotalProducts'}),
-      loadListItem () {
+      loadListItem(){
+      this.totalRecords= this.getTotalProducts;
+      console.log("total Product -->> "+ this.totalRecords);
+      this.totalPages=Math.ceil(this.totalRecords/this.recordsPerPage);
+      console.log("total page -->> "+this.totalPages);
       this.showLoader = true
-      console.log(this.recordsPerPage)
+      //console.log(this.recordsPerPage)
       if(this.actionLoadListProduct({page:this.page,recordsPerPage: this.recordsPerPage , showLoader:this.showLoader})){
-        this.showLoader = false
+        this.showLoader = false;
       }
-      this.actionLoadListProduct();
-
-      this.totalPages = 4 // Calculate total records
-      this.totalRecords = 20
-      /*
-      axios.get(`${baseApiURL}/${this.page}/${this.recordsPerPage}`)
-      .then(response => {
-          this.showLoader = false
-          this.listItems = response.data.products
-          console.log('items'+ this.listItems)
-          this.totalPages = Math.ceil(response.data.totalPassengers / this.recordsPerPage) // Calculate total records
-          this.totalRecords = response.data.totalPassengers
-      })*/
     },
     onPageChange (page){
       console.log("onPageChange::"+page)
-      //When I change the page I get the next 3 products from the
+      //When I change the page I get the next products from the
       this.page = page
       this.loadListItem()
     },
     onChangeRecordsPerPage(){
       this.loadListItem()
     },
-    gotoPage () {
+    gotoPage() {
       if (!isNaN(parseInt(this.enterpageno))) {
         this.page = parseInt(this.enterpageno)
         this.loadListItem()

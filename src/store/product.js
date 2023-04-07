@@ -13,6 +13,7 @@ Vue.use(Vuex)
           {cellphone:'33+(303)987-988'},
           {employer:true}
           ],*/
+    totalproducts:0,      
     listItems:[
       {}
     ],
@@ -73,6 +74,9 @@ Vue.use(Vuex)
   const getters= {
     getProducts:state=>{
       return state.products ;
+    },
+    getTotalProducts:state=>{
+      return state.totalproducts ;
     }
   };
   const mutations= {
@@ -97,7 +101,19 @@ Vue.use(Vuex)
           //this.totalPages = Math.ceil(response.data.totalPassengers / this.recordsPerPage) // Calculate total records
           //this.totalRecords = response.data.totalPassengers
       })
+    },
+
+    actionTotalProducts : (context) => {
+      console.log(context)
+      //console.log("**************** Total products *****************")
+      axios.get(`${baseApiURL}/total`)
+      .then(response => {
+            state.totalproducts=response.data;
+          //  console.log( "total**** inside action" + state.totalproducts)    
+            //return   state.totalproducts;  
+      })
     }
+
   };
    
 export default {
