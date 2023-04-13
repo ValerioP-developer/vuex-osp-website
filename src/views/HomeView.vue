@@ -1,43 +1,46 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-   <!-- {{getTotalProducts}}-->
+    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h2> TOTAL PRODUCT:{{ getTotalProducts }} </h2>
+    <!--<button @click="click()">Click</button>-->
   </div>
 </template>
-
+<script src="https://js.stripe.com/v3/"></script>   
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import StripeCheckout from '@/components/StripeCheckout.vue'
 import {mapGetters ,mapActions} from 'vuex';
-
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    HelloWorld,
   },
   data () {
     return {
-      totalPages: 0
      }
   },
   computed:{
     ...mapGetters({
-        'getTotalProducts' : 'product/getTotalProducts'
+       'getTotalProducts' : 'product/getTotalProducts' ,
     }) 
   },
   created () {
-     this.loadTotalProducts()
+     /*CURRENTLY THIS ACTION LOAD FROM THE DATABASE THE TOTAL NUMBER OF PRODUCTS 
+      THIS INFO IS MANDATORY FOR THE PAGINATION FUNCTIONALITY 
+     */
+     this.actionTotalProducts();
   },
   methods: {
+      //ACTIONS
       ...mapActions({'actionTotalProducts': 'product/actionTotalProducts'}),
-      /* Load total number of products for pagination purpose*/
-      loadTotalProducts(){
-        this.actionTotalProducts();
-      //  console.log("this action is from HOME VIEW");
-      }
+      ...mapActions({'actionPay': 'product/actionPay'}),
+      ...mapActions({'actionPayClick': 'product/actionPayClick'}),
+      /*
+      click(){
+        this.actionPayClick();
+      }*/
   }
-
-
 }
 </script>
