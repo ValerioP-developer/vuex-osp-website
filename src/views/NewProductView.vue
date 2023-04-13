@@ -81,7 +81,8 @@ export default {
 
   },
   methods : {
-    ...mapMutations({  'setProduct': 'product/setProduct'} ),
+    
+    ...mapMutations({'setProduct': 'product/setProduct'}),
     invia(){
        console.log('First invia call');
         this.setProduct(this.product);
@@ -96,10 +97,9 @@ export default {
     createImage(file) {
       //var image = new Image();
       var reader = new FileReader();
-      var vm = this;
+        var vm = this;
 
-      reader.onload = (e) => {
-       
+        reader.onload = (e) => {
         vm.image = e.target.result;
       };
       reader.readAsDataURL(file);
