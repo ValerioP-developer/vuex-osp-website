@@ -35,12 +35,13 @@ export default {
   methods: {
       //ACTIONS
       ...mapActions({'actionTotalProducts': 'product/actionTotalProducts'}),
-      ...mapActions({'actionPay': 'product/actionPay'}),
-      ...mapActions({'actionPayClick': 'product/actionPayClick'}),
-      /*
-      click(){
-        this.actionPayClick();
-      }*/
+          /*
+          ...mapActions({'actionPay': 'product/actionPay'}),
+          ...mapActions({'actionPayClick': 'product/actionPayClick'}),
+          click(){
+            this.actionPayClick();
+          }
+          */
   }
 }
 </script>
