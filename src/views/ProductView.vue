@@ -10,7 +10,7 @@
           <p>{{ item.description }}</p>
           <p>{{ item.quantity }}</p>
           <p>
-            <StripeCheckout :item=item></StripeCheckout>
+            <StripeCheckout :item=item :quantity=number></StripeCheckout>
           </p>
           <p>
             <button class="px-4 py-2 text-white bg-blue-600 focus:outline-none" @click="increment">

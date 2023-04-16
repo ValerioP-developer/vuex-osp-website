@@ -33,6 +33,10 @@ export default {
       default() {
         return {}
       }
+    },
+    quantity: {
+      default: 0,
+      type: Number
     }
   }
     /*,
@@ -47,7 +51,10 @@ export default {
       console.log("PRICE FROM item passed from outside component  " + this.item.price);
       //Set localItems price
       this.lineItems[0].price = this.item.price;
-      console.log("After setting item price " + this.lineItems[0].price);
+      console.log(" ***** *** passed quantity" + this.quantity);
+      this.lineItems[0].quantity = this.quantity;
+      //console.log(" **** *** lineItems " + this.lineItems[0].quantity);
+      //console.log("After setting item price " + this.lineItems[0].price);
       this.$refs.checkoutRef.redirectToCheckout();
     },
   },
