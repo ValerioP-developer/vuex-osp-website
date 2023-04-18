@@ -1,0 +1,97 @@
+//OBJECT DATA MODEL
+const Product = require('../models/product');
+
+/*
+CREATE NEW PRODUCT INTO DB
+
+API(post): http://localhost:3000/product
+PRODUCT: { 
+          name (String),
+          description (String),
+          category (String),
+          price (String),
+          quantity (Number)
+        }
+*/ 
+exports.createProduct=async (req,res)=> {
+    const product = new Product({
+      name:req.body.name,
+      description:req.body.description,
+      category:req.body.category,
+      price:req.body.price,
+      quantity:req.body.quantity
+    });
+       // console.log(req);
+    await product.save()
+    .then(function(product) {
+      // If we were able to successfully create a Product, send it back to the client
+      res.json(product);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+};
+/*
+GET NUMBER OF TOTAL PRODUCT STORED INTO DB
+API(get): http://localhost:3000/product
+*/
+exports.totalProduct= async (req,res,next) => {
+  await Product.count({})
+  .then(function(total) {
+   // console.log("Total products "+total);
+    // If we were able to successfully create a Product, send it back to the client
+    res.json(total);
+  })
+  .catch(function(err) {
+    // If an error occurred, send it to the client
+    res.json(err);
+  });
+}
+/*
+GET (itemPerPage) PRODUCTS TO DISPLAY BASED ON THE CURRENT PAGE
+API(get): http://localhost:3000/:page/:size
+          page ->Current Page
+          size ->Number of Item to display
+*/
+exports.loadIndexPage= async (req,res,next) => {
+  await Product.count({})
+    .then(function(total) {
+        TOTALCAR=total;
+    })
+    //console.log("PRODUCT COUNTED  "+TOTALCAR)
+    var currentPage = req.params.page;
+    var itemPerPage=req.params.size;
+    var stop = itemPerPage * currentPage;
+    var start = stop - itemPerPage;
+  
+    console.log(" start "+start + " stop "+stop );
+    //res.json( "test" );
+  
+    await Product.find({}).skip(start).limit(itemPerPage)
+    .then(function(prod) {
+      console.log(prod);
+      // If we were able to successfully create a Car, send it back to the client
+      return res.json({products:  prod } )
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+};
+  
+ /*
+ Product by name
+ */
+ exports.productByName= async (req,res,next) => {
+  await Product.findOne({name:req.params.name})
+  .then(function(product) {
+    // If we were able to successfully create a Product, send it back to the client
+    res.json(product);
+  })
+  .catch(function(err) {
+    // If an error occurred, send it to the client
+    res.json(err);
+  });
+}
+    
