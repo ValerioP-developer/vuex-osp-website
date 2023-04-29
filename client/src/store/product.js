@@ -13,6 +13,13 @@ const state = {
   totalproducts: 0,
   //ARRAY USED TO LOAD PRODUCTS
   products: [{}],
+  currentProduct: {
+    name: "",
+    description: "",
+    category: "",
+    price: "",
+    quantity: 0,
+  },
 };
 //GETTERS
 const getters = {
@@ -20,13 +27,22 @@ const getters = {
   getProducts: (state) => {
     return state.products;
   },
+  //GET CURRENT SELECTED PRODUCT
+  getCurrentProduct: (state) => {
+    return state.currentProduct;
+  },
   //GET TOTAL PRODUCT NUMBER
   getTotalProducts: (state) => {
     return state.totalproducts;
   },
 };
 //MUTATIONS
-const mutations = {};
+const mutations = {
+  setCurrentProduct(state, newProduct) {
+    state.currentProduct = newProduct;
+    console.log("product mutation -->    " + state.currentProduct.name);
+  },
+};
 //ACTIONS
 const actions = {
   actionLoadListProduct: (context, info) => {

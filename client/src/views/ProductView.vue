@@ -11,6 +11,8 @@
           <p>{{ item.quantity }}</p>
           <p>
             <StripeCheckout :item=item :quantity=number></StripeCheckout>
+            <!--   <router-link to="/selected-product"> more info </router-link>-->
+            <button v-on:click="updateCurrentItem(item)">More info</button>
           </p>
           <p>
             <button class="px-4 py-2 text-white bg-blue-600 focus:outline-none" @click="increment">
@@ -29,21 +31,24 @@
     </ul>
     <Pagination v-if="listItems" :total-pages="totalPages" :per-page="recordsPerPage" :current-page="page"
       @pagechanged="onPageChange" />
+
   </div>
 </template>
 
 <script>
 /* IMPORT COMPONENTS AND LIBRARIES */
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapMutations } from 'vuex';
 import Pagination from '@/components/PaginationView.vue'
 import Loader from '@/components/LoaderView.vue'
 import StripeCheckout from '@/components/StripeCheckout.vue'
+//import Selected from '@/views/SelectedProductView.vue'
 
 export default {
   components: {
     Pagination,
     Loader,
     StripeCheckout
+    //Selected
   },
   data() {
     return {
@@ -63,7 +68,7 @@ export default {
       'getInfo': 'profile/getInfo',
       'getProjects': 'profile/getProjects',
       'getProducts': 'product/getProducts',
-      'getTotalProducts': 'product/getTotalProducts'
+      'getTotalProducts': 'product/getTotalProducts',
     })
   },
   created() {
@@ -73,6 +78,7 @@ export default {
     //...mapMutations({ 'setLineItems': 'product/setLineItems' }),
     ...mapActions({ 'actionLoadListProduct': 'product/actionLoadListProduct' }),
     ...mapActions({ 'actionTotalProducts': 'product/actionTotalProducts' }),
+    ...mapMutations({ 'setCurrentProduct': 'product/setCurrentProduct' }),
     loadListItem() {
       this.totalRecords = this.getTotalProducts;
       console.log("total Product -->> " + this.totalRecords);
@@ -104,10 +110,13 @@ export default {
         this.page = parseInt(this.enterpageno)
         this.loadListItem()
       }
+    },
+    updateCurrentItem(item) {
+      this.setCurrentProduct(item);
+      this.$router.push('/selected-product')
     }
   }
 }
-
 </script>
 
 <style lang="scss"  scoped>
