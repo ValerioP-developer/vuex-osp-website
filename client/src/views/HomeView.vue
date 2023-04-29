@@ -1,24 +1,13 @@
 <template>
   <div class="home">
     <!--
-          <img alt="Vue logo" src="../assets/logo.png">
-          <HelloWorld msg="Welcome to Your Vue.js App" />
-          <h2> TOTAL PRODUCT:{{ getTotalProducts }} </h2>
-          <h2> TOTAL posts:{{ getTotalPosts }} </h2>
-          <button @click="click()">Click</button>
-        -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class="display-3">Welcomee to my Blog!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a
-          jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
-        </p>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a
-          jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
-        </p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
-      </div>
-    </div>
+    <img alt="Vue logo" src="../assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h2> TOTAL PRODUCT:{{ getTotalProducts }} </h2>
+    <h2> TOTAL posts:{{ getTotalPosts }} </h2>
+    <button @click="click()">Click</button>-->
+
+    <TopContainer> </TopContainer>
     <div class="container">
       <div class="row">
         <div class="col-6">
@@ -87,11 +76,13 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import StripeCheckout from '@/components/StripeCheckout.vue'
+import TopContainer from '@/components/TopContainer.vue'
 import {mapGetters ,mapActions} from 'vuex';
 export default {
   name: 'HomeView',
   components: {
     HelloWorld,
+    TopContainer
   },
   data () {
     return {

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <TopContainer> </TopContainer>
         <Loader :loading="showLoader" />
         <ul class="flex-container">
             <li v-for="item in getPosts" :key="item.id" class="flex-item">
@@ -28,11 +29,12 @@
 import { mapGetters, mapActions } from 'vuex';
 import Pagination from '@/components/PaginationView.vue'
 import Loader from '@/components/LoaderView.vue'
-
+import TopContainer from '@/components/TopContainer.vue'
 export default {
     components: {
         Pagination,
-        Loader
+        Loader,
+        TopContainer
     },
     data() {
         return {
@@ -129,6 +131,7 @@ ul li {
             background: green;
             width: calc(100% / 4);
             padding: 5px;
+            padding-top: random($limit: 20);
             height: auto;
             color: black;
             font-weight: bold;

@@ -1,6 +1,7 @@
 <template>
   <div>
     <Loader :loading="showLoader" />
+    <TopContainer> </TopContainer>
     <ul class="flex-container">
       <li v-for="item in getProducts" :key="item.id" class="flex-item">
         <div class="card">
@@ -41,13 +42,15 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
 import Pagination from '@/components/PaginationView.vue'
 import Loader from '@/components/LoaderView.vue'
 import StripeCheckout from '@/components/StripeCheckout.vue'
+import TopContainer from '@/components/TopContainer.vue'
 //import Selected from '@/views/SelectedProductView.vue'
 
 export default {
   components: {
     Pagination,
     Loader,
-    StripeCheckout
+    StripeCheckout,
+    TopContainer
     //Selected
   },
   data() {
