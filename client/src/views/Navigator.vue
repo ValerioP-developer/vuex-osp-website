@@ -1,12 +1,15 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> !
-    <router-link to="/login">Login</router-link> !
-    <router-link to="/blog">Blog</router-link> !
-    <router-link to="/products">Products</router-link> !
-    <router-link to="/new-product">NEW PRODUCT</router-link> !
-    <span style="float:right;">
-    </span>
+    <footer id="sticky-footer" class="flex-shrink-0 py-4  text-white-50">
+      <div class="container text-center">
+        <router-link to="/">Home</router-link> !
+        <router-link to="/login">Login</router-link> !
+        <router-link to="/blog">Blog</router-link> !
+        <router-link to="/products">Products</router-link> !
+        <router-link to="/new-product">NEW PRODUCT</router-link> !
+      </div>
+    </footer>
+
   </div>
 </template>
 <script>
