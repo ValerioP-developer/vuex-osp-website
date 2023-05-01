@@ -2,7 +2,7 @@
   <div>
     <stripe-checkout ref="checkoutRef" mode="payment" :pk="publishableKey" :line-items="lineItems"
       :success-url="successURL" :cancel-url="cancelURL" @loading="v => loading = v" />
-    <button @click="submit">Pay now!</button>
+    <button class="btn btn-warning" @click="submit">Pay now!</button>
   </div>
 </template>
 <script>

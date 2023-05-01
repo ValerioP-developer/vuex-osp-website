@@ -5,16 +5,16 @@
     <ul class="flex-container">
       <li v-for="item in getProducts" :key="item.id" class="flex-item">
         <div class="card">
-          <img src="../assets/watch.jpg" alt="Denim Jeans" style="width:100%">
+          <img src="../assets/watch.jpg" alt="Denim Jeans" style="width:100%;margin-top:">
           <h3>{{ item.name }}</h3>
           <p class="price">$19.99</p>
           <p>{{ item.description }}</p>
           <p>{{ item.quantity }}</p>
           <p>
-            <StripeCheckout :item=item :quantity=number></StripeCheckout>
+            <!--<StripeCheckout :item=item :quantity=number></StripeCheckout> -->
             <!--   <router-link to="/selected-product"> more info </router-link>-->
             <button v-on:click="updateCurrentItem(item)">More info</button>
-          </p>
+          </p><!--  
           <p>
             <button class="px-4 py-2 text-white bg-blue-600 focus:outline-none" @click="increment">
               Increment
@@ -24,7 +24,7 @@
               Decrement
             </button>
           </p>
-          <!--   <button id="btn-add" class="button"  @click="buyProduct(item)"   >Add to cart</button>  -->
+           <button id="btn-add" class="button"  @click="buyProduct(item)"   >Add to cart</button>  -->
         </div>
       </li>
       <!-- <li v-if="listItems.length === 0" class="flex-item center">No Record Found</li>
@@ -41,7 +41,7 @@
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 import Pagination from '@/components/PaginationView.vue'
 import Loader from '@/components/LoaderView.vue'
-import StripeCheckout from '@/components/StripeCheckout.vue'
+//import StripeCheckout from '@/components/StripeCheckout.vue'
 import TopContainer from '@/components/TopContainer.vue'
 //import Selected from '@/views/SelectedProductView.vue'
 
@@ -49,12 +49,13 @@ export default {
   components: {
     Pagination,
     Loader,
-    StripeCheckout,
+    // StripeCheckout,
     TopContainer
     //Selected
   },
   data() {
     return {
+      randomNumber: 0,
       number: 0,
       selectedItem: null,
       showLoader: false,
@@ -117,6 +118,9 @@ export default {
     updateCurrentItem(item) {
       this.setCurrentProduct(item);
       this.$router.push('/selected-product')
+    },
+    random() {
+      this.randomNumber = Math.floor((Math.random() * 4) + 1);
     }
   }
 }

@@ -1,49 +1,83 @@
 <template>
     <div>
+        <TopContainer> </TopContainer>
+        <!-- {{ getCurrentProduct }}-->
+        <div class="container">
+            <div class="row  justify-content-center">
+                <h1> {{ getCurrentProduct.name }}</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-6" style="background-color: red;">
+                    <img style="width: 100%;"
+                        src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
+                        alt="test">
 
-        {{ getCurrentProduct }}
-        <!-- Button trigger modal 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
-        </button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
+                </div>
+                <div class="col-md-6">
+                    <div class="flex-direction:column">
                         <p>
-                            {{ item.name }}<br>
-                            {{ item.quantity }}<br>
-                            {{ item.description }}
+                            What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
+                            enough
+                            to want to explore. That was the problem. There was always one that let fear rule her life.
+                            What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
+                            enough
+                            to want to explore. That was the problem. There was always one that let fear rule her life.
+                            What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
+                            enough
+                            to want to explore. That was the problem. There was always one that let fear rule her life.
+
                         </p>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                    <div class="flex-direction:column">
+                        <button type="button" v-on:click="counter += 1" class="btn btn-warning">+</button>
+                        <span class="btn"> {{ counter }}</span>
+                        <button type="button" v-on:click="counter -= 1" class="btn btn-warning">-</button>
+                        <StripeCheckout :item=getCurrentProduct :quantity=counter></StripeCheckout>
                     </div>
                 </div>
             </div>
+            <div class="row ">
+                <div class="col-4" style="background-color: red;">
+                    <img class="img-fluid " style="width: 60%;"
+                        src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
+                        alt="test">
+
+                </div>
+                <div class="col-4" style="background-color: red;">
+                    <img class="img-fluid" style="width: 60%;"
+                        src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
+                        alt="test">
+
+                </div>
+                <div class="col-4" style="background-color: red;">
+                    <img class="img-fluid" style="width: 60%;"
+                        src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
+                        alt="test">
+
+                </div>
+
+
+            </div>
         </div>
--->
+
     </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import StripeCheckout from '@/components/StripeCheckout.vue'
+import TopContainer from '@/components/TopContainer.vue'
 export default {
     name: 'SelectedProductView',
     components: {
-
+        TopContainer,
+        StripeCheckout
     },
     data() {
         return {
-
+            counter: 1,
         }
     },
     computed: {
