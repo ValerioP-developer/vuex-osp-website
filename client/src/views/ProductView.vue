@@ -1,7 +1,25 @@
 <template>
   <div>
-    <Loader :loading="showLoader" />
     <TopContainer> </TopContainer>
+    <div class="container">
+      <Loader :loading="showLoader" />
+      <div class="row">
+        <div class="col-md-3" v-for="item in getProducts" :key="item.id">
+          <div class="card">
+            <img src="../assets/watch.jpg" alt="Denim Jeans" style="width:100%;">
+            <h3>{{ item.name }}</h3>
+            <p class="price">$19.99</p>
+            <p>{{ item.description }}</p>
+            <p>{{ item.quantity }}</p>
+            <p>
+              <!--<StripeCheckout :item=item :quantity=number></StripeCheckout> -->
+              <!--   <router-link to="/selected-product"> more info </router-link>-->
+              <button v-on:click="updateCurrentItem(item)">More info</button>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--
     <ul class="flex-container">
       <li v-for="item in getProducts" :key="item.id" class="flex-item">
         <div class="card">
@@ -11,28 +29,18 @@
           <p>{{ item.description }}</p>
           <p>{{ item.quantity }}</p>
           <p>
-            <!--<StripeCheckout :item=item :quantity=number></StripeCheckout> -->
-            <!--   <router-link to="/selected-product"> more info </router-link>-->
+           <StripeCheckout :item=item :quantity=number></StripeCheckout> 
+              <router-link to="/selected-product"> more info </router-link>
             <button v-on:click="updateCurrentItem(item)">More info</button>
-          </p><!--  
-          <p>
-            <button class="px-4 py-2 text-white bg-blue-600 focus:outline-none" @click="increment">
-              Increment
-            </button>
-            {{ number }}
-            <button class="px-4 py-2 text-white bg-red-600 focus:outline-none" @click="decrement">
-              Decrement
-            </button>
           </p>
-           <button id="btn-add" class="button"  @click="buyProduct(item)"   >Add to cart</button>  -->
         </div>
       </li>
-      <!-- <li v-if="listItems.length === 0" class="flex-item center">No Record Found</li>
-      <li v-if="listItems.length === 0" class="flex-item center">No Record Found</li> -->
-    </ul>
-    <Pagination v-if="listItems" :total-pages="totalPages" :per-page="recordsPerPage" :current-page="page"
-      @pagechanged="onPageChange" />
-
+      <li v-if="listItems.length === 0" class="flex-item center">No Record Found</li>
+      <li v-if="listItems.length === 0" class="flex-item center">No Record Found</li>
+    </ul>-->
+      <Pagination v-if="listItems" :total-pages="totalPages" :per-page="recordsPerPage" :current-page="page"
+        @pagechanged="onPageChange" />
+    </div>
   </div>
 </template>
 
@@ -63,7 +71,7 @@ export default {
       page: 1,
       totalPages: 0,
       totalRecords: 0,
-      recordsPerPage: 5,
+      recordsPerPage: 4,
       enterpageno: '',
     }
   },
