@@ -6,7 +6,7 @@ import ProductView from "../views/ProductView.vue";
 import NewProductView from "../views/NewProductView.vue";
 import BlogView from "../views/BlogView.vue";
 import SelectedProduct from "../views/SelectedProductView.vue";
-
+import SelectedPost from "../views/SelectedPostView.vue";
 Vue.use(VueRouter);
 const routes = [
   {
@@ -48,6 +48,11 @@ const routes = [
     path: "/selected-product",
     name: "selected-product",
     component: SelectedProduct,
+  },
+  {
+    path: "/selected-post",
+    name: "selected-post",
+    component: SelectedPost,
   },
 ];
 const router = new VueRouter({

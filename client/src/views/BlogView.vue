@@ -15,6 +15,7 @@
                             Content : this is a content bla blaa blaaaa
                             flkasjlfajs jklasdjflkj sjalksfjdl ksalajsf
                             sjalkfs klasdjflkj alksfjlk lkasjfl asdlk
+                            <button v-on:click="updateCurrentItem(item)">More info</button>
                         </p>
                     </div>
                 </div>
@@ -44,7 +45,7 @@
   
 <script>
 /* IMPORT COMPONENTS AND LIBRARIES */
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapMutations } from 'vuex';
 import Pagination from '@/components/PaginationView.vue'
 import Loader from '@/components/LoaderView.vue'
 import TopContainer from '@/components/TopContainer.vue'
@@ -80,6 +81,7 @@ export default {
     methods: {
         ...mapActions({ 'actionLoadListPosts': 'blog/actionLoadListPosts' }),
         ...mapActions({ 'actionTotalPosts': 'blog/actionTotalPosts' }),
+        ...mapMutations({ 'setCurrentPost': 'blog/setCurrentPost' }),
         loadListItem() {
             this.totalRecords = this.getTotalPosts;
             console.log("total POSTS -->> " + this.totalRecords);
@@ -105,6 +107,11 @@ export default {
                 this.page = parseInt(this.enterpageno);
                 this.loadListItem();
             }
+        },
+        updateCurrentItem(item) {
+            alert(item.title);
+            this.setCurrentPost(item);
+            this.$router.push('/selected-post')
         }
     }
 }

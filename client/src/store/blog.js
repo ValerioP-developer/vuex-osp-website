@@ -26,6 +26,7 @@ const state = {
       name: "post3",
     },*/
   ],
+  currentPost: {},
 };
 //GETTERS
 const getters = {
@@ -37,9 +38,18 @@ const getters = {
   getTotalPosts: (state) => {
     return state.totalPosts;
   },
+  //GET CURRENT POST
+  getCurrentPost: (state) => {
+    return state.currentPost;
+  },
 };
 //MUTATIONS
-const mutations = {};
+const mutations = {
+  setCurrentPost(state, newPost) {
+    state.currentPost = newPost;
+    console.log("product mutation -->    " + state.currentPost.title);
+  },
+};
 //ACTIONS
 const actions = {
   actionLoadListPosts: (context, info) => {
