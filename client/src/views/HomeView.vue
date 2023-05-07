@@ -9,59 +9,23 @@
 
     <TopContainer> </TopContainer>
     <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <p style="font-size:18px"> Let's check the product of the day
-            <img style="float: right;"
+      <div class="row common-margin">
+        <div class="col-md-6 col-sm-12 row1-col1">
+          <p> <span class="txt-row1">Let's check the product of the day</span>
+            <img id="img-row1-col1"
               src="https://media.gq-magazine.co.uk/photos/63495c79cda0e0ecb3900192/16:9/w_1920%2Cc_limit/owh_HP.jpg"
               alt="test">
           </p>
         </div>
-        <div class="col-6" style="margin-top:10%">
-          <p style="font-size:18px"> Let's check the product of the day
-            <img style="float: center;"
+        <div class="col-md-6 col-sm-12 row1-col2">
+          <p><span class="txt-row1">Let's check the product of the day</span>
+            <img id="img-row1-col2"
               src="https://media.gq-magazine.co.uk/photos/63495c79cda0e0ecb3900192/16:9/w_1920%2Cc_limit/owh_HP.jpg"
               alt="test">
           </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <img style="width: 60%;"
-            src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg" alt="test">
-          <a href="test">Read more ...</a>
-        </div>
-        <div class="col-6" style="margin-top:10%">
-          This is a template for a simple marketing or informational website. It includes a large callout called a
-          jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6" style="padding-left: 20%;padding-top: 10%;">
-          <img style="width: 60%;" src="http://clipart-library.com/images/qiBAkbnoT.png" alt="test">
-        </div>
-        <div class="col-6" style="margin-top:10%">
-          <a href="test"> My articleee jumbotron and three supporting pieces of content. Use it as a starting </a>
-        </div>
-      </div>
-      <div class="row" style="padding-top: 10%;">
-        <div class="col-3" style="width: 80%;">
-          <img src="https://media.gq-magazine.co.uk/photos/63495c79cda0e0ecb3900192/16:9/w_1920%2Cc_limit/owh_HP.jpg"
-            alt="test">
-        </div>
-        <div class="col-3" style="width: 80%;">
-          <img src="https://media.gq-magazine.co.uk/photos/63495c79cda0e0ecb3900192/16:9/w_1920%2Cc_limit/owh_HP.jpg"
-            alt="test">
-        </div>
-        <div class="col-3" style="width: 80%;">
-          <img src="https://media.gq-magazine.co.uk/photos/63495c79cda0e0ecb3900192/16:9/w_1920%2Cc_limit/owh_HP.jpg"
-            alt="test">
-        </div>
-        <div class="col-3" style="width: 80%;">
-          <img src="https://media.gq-magazine.co.uk/photos/63495c79cda0e0ecb3900192/16:9/w_1920%2Cc_limit/owh_HP.jpg"
-            alt="test">
-        </div>
-      </div>
+      </div> <!-- end First row #################################### -->
+
       <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
         <div class="container text-center">
           <small>Copyright &copy; Your Website</small>
@@ -126,5 +90,67 @@ export default {
 p,
 h1 {
   color: black;
+}
+
+@media (max-width: 767px) {
+
+  /*################################## ROW 1 ###################################*/
+  #img-row1-col1 {
+    float: center;
+  }
+
+  #img-row1-col2 {
+    float: center;
+  }
+
+  #img-row1-col1,
+  #img-row1-col2 {
+    margin-top: 4%;
+    width: 50%;
+  }
+
+  .row1-col1 {
+    margin-top: 0%;
+  }
+
+  .row1-col2 {
+    margin-top: 5%;
+  }
+
+  /*################################## ROW 2 ###################################*/
+
+}
+
+@media (min-width: 767px) {
+
+  /*################################## ROW 1 ###################################*/
+  .common-margin {
+    margin-top: 10%;
+  }
+
+  #img-row1-col1 {
+    float: left;
+  }
+
+  #img-row1-col2 {
+    float: right;
+  }
+
+  .row1-col1 {
+    margin-top: 0%;
+  }
+
+  .row1-col2 {
+    margin-top: 15%;
+  }
+
+  #img-row1-col1,
+  #img-row1-col2 {
+
+    width: 40%;
+  }
+
+  /*################################## ROW 2 ###################################*/
+
 }
 </style>
