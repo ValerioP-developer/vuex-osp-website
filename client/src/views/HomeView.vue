@@ -24,8 +24,27 @@
               alt="test">
           </p>
         </div>
-      </div> <!-- end First row #################################### -->
-
+      </div> <!-- end 1 row #################################### -->
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            <img id="img-row2-col1"
+              src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg" alt="test">
+          </p>
+        </div>
+        <div class="col-md-6  row2-col2">
+          <p class="text-center">
+            <span> TITLE BLA BLA BLA</span><br><br>
+            This is a template for a simple marketing or informational website. It includes a large callout called a
+            jumbotron and three supporting pieces of content. Use it as a starting point to create something more
+            unique.
+            jumbotron and three supporting pieces of content. Use it as a starting point to create something more
+            unique.
+            jumbotron and three supporting pieces of content. Use it as a starting point to create something more
+            unique.
+          </p>
+        </div>
+      </div> <!-- end 2 row #################################### -->
       <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
         <div class="container text-center">
           <small>Copyright &copy; Your Website</small>
@@ -118,7 +137,14 @@ h1 {
   }
 
   /*################################## ROW 2 ###################################*/
+  #img-row2-col1 {
+    width: 80%;
+    margin-top: 10%;
+  }
 
+  .row2-col2 {
+    margin-top: 5%;
+  }
 }
 
 @media (min-width: 767px) {
@@ -146,11 +172,18 @@ h1 {
 
   #img-row1-col1,
   #img-row1-col2 {
-
     width: 40%;
   }
 
   /*################################## ROW 2 ###################################*/
+  #img-row2-col1 {
+    width: 80%;
+    margin-left: 0;
+    margin-top: 0
+  }
 
+  .row2-col2 {
+    margin-top: 15%;
+  }
 }
 </style>
