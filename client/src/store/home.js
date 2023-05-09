@@ -16,6 +16,7 @@ const state = {
     "https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg",
   imgRow2Col1:
     "https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg",
+  imgRow3Col1: "http://clipart-library.com/images/qiBAkbnoT.png",
 }; //GETTERS
 const getters = {
   //GET TOTAL PRODUCT ARRAY
@@ -42,6 +43,9 @@ const getters = {
   },
   getImgRow2Col1: (state) => {
     return state.imgRow2Col1;
+  },
+  getImgRow3Col1: (state) => {
+    return state.imgRow3Col1;
   },
 };
 //MUTATIONS

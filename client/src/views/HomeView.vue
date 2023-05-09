@@ -37,7 +37,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-12">
           <p>
-            <img id="img-row3-col1" src="http://clipart-library.com/images/qiBAkbnoT.png" alt="test">
+            <img id="img-row3-col1" :src="getImgRow3Col1" alt="test">
           </p>
         </div>
         <div class="col-md-9 col-sm-12">
@@ -81,7 +81,8 @@ export default {
        'geTxtRow3Col2' : 'home/geTxtRow3Col2' ,
        'getImgRow1Col1':'home/getImgRow1Col1' ,
        'getImgRow1Col2':'home/getImgRow1Col2' ,
-       'getImgRow2Col1':'home/getImgRow2Col1'
+       'getImgRow2Col1':'home/getImgRow2Col1',
+       'getImgRow3Col1' :'home/getImgRow3Col1'
     })
   },
   created () {
