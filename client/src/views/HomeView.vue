@@ -11,40 +11,39 @@
     <div class="container">
       <div class="row common-margin">
         <div class="col-md-6 col-sm-12 row1-col1">
-          <p> <span class="txt-row1">Let's check the product of the day</span>
-            <img id="img-row1-col1"
-              src="https://media.gq-magazine.co.uk/photos/63495c79cda0e0ecb3900192/16:9/w_1920%2Cc_limit/owh_HP.jpg"
-              alt="test">
+          <p> <span class="txt-row1">{{ getTxtRow1Col1 }}</span>
+            <img id="img-row1-col1" :src="getImgRow1Col1" alt="test">
           </p>
         </div>
         <div class="col-md-6 col-sm-12 row1-col2">
-          <p><span class="txt-row1">Let's check the product of the day</span>
-            <img id="img-row1-col2"
-              src="https://media.gq-magazine.co.uk/photos/63495c79cda0e0ecb3900192/16:9/w_1920%2Cc_limit/owh_HP.jpg"
-              alt="test">
+          <p><span class="txt-row1">{{ getTxtRow1Col2 }}</span>
+            <img id="img-row1-col2" :src="getImgRow1Col2" alt="test">
           </p>
         </div>
       </div> <!-- end 1 row #################################### -->
       <div class="row">
         <div class="col-md-6">
           <p>
-            <img id="img-row2-col1"
-              src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg" alt="test">
+            <img id="img-row2-col1" :src="getImgRow2Col1" alt="test">
           </p>
         </div>
         <div class="col-md-6  row2-col2">
           <p class="text-center">
-            <span> TITLE BLA BLA BLA</span><br><br>
-            This is a template for a simple marketing or informational website. It includes a large callout called a
-            jumbotron and three supporting pieces of content. Use it as a starting point to create something more
-            unique.
-            jumbotron and three supporting pieces of content. Use it as a starting point to create something more
-            unique.
-            jumbotron and three supporting pieces of content. Use it as a starting point to create something more
-            unique.
+            <span> {{ getTitleRow2Col2 }}</span><br><br>
+            <span id="txt-row3-col2"> {{ getTxtRow2Col2 }}</span>
           </p>
         </div>
       </div> <!-- end 2 row #################################### -->
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <p>
+            <img id="img-row3-col1" src="http://clipart-library.com/images/qiBAkbnoT.png" alt="test">
+          </p>
+        </div>
+        <div class="col-md-9 col-sm-12">
+          <h3 id="txt-row3-col2"> {{ geTxtRow3Col2 }}</h3>
+        </div>
+      </div> <!-- end 3 row #################################### -->
       <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
         <div class="container text-center">
           <small>Copyright &copy; Your Website</small>
@@ -75,7 +74,15 @@ export default {
     ...mapGetters({
        'getTotalProducts' : 'product/getTotalProducts' ,
        'getTotalPosts' : 'blog/getTotalPosts' ,
-    }) 
+       'getTxtRow1Col1' : 'home/getTxtRow1Col1' ,
+       'getTxtRow1Col2' : 'home/getTxtRow1Col2' ,
+       'getTitleRow2Col2' : 'home/getTitleRow2Col2' ,
+       'getTxtRow2Col2' : 'home/getTxtRow2Col2' ,
+       'geTxtRow3Col2' : 'home/geTxtRow3Col2' ,
+       'getImgRow1Col1':'home/getImgRow1Col1' ,
+       'getImgRow1Col2':'home/getImgRow1Col2' ,
+       'getImgRow2Col1':'home/getImgRow2Col1'
+    })
   },
   created () {
      /*CURRENTLY THIS ACTION LOAD FROM THE DATABASE THE TOTAL NUMBER OF PRODUCTS 
@@ -145,6 +152,20 @@ h1 {
   .row2-col2 {
     margin-top: 5%;
   }
+
+  /*################################## ROW 3 ###################################*/
+  #img-row3-col1 {
+    width: 40%;
+    float: center;
+    transform: rotate(90deg);
+    margin-top: 5%;
+  }
+
+  #txt-row3-col2 {
+    margin-top: 5%;
+  }
+
+
 }
 
 @media (min-width: 767px) {
@@ -183,6 +204,17 @@ h1 {
   }
 
   .row2-col2 {
+    margin-top: 15%;
+  }
+
+  /*################################## ROW 3 ###################################*/
+  #img-row3-col1 {
+    width: 40%;
+    float: left;
+    margin-top: 30%;
+  }
+
+  #txt-row3-col2 {
     margin-top: 15%;
   }
 }
