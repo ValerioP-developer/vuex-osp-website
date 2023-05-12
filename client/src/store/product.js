@@ -20,6 +20,12 @@ const state = {
     price: "",
     quantity: 0,
   },
+  imgBottom1:
+    "https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg",
+  imgBottom2:
+    "https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg",
+  imgBottom3:
+    "https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg",
 };
 //GETTERS
 const getters = {
@@ -34,6 +40,15 @@ const getters = {
   //GET TOTAL PRODUCT NUMBER
   getTotalProducts: (state) => {
     return state.totalproducts;
+  },
+  getImgBottom1: (state) => {
+    return state.imgBottom1;
+  },
+  getImgBottom2: (state) => {
+    return state.imgBottom2;
+  },
+  getImgBottom3: (state) => {
+    return state.imgBottom3;
   },
 };
 //MUTATIONS

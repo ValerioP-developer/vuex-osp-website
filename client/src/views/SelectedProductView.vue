@@ -40,22 +40,15 @@
             </div>
             <div class="row ">
                 <div class="col-4" style="background-color: red;">
-                    <img class="img-fluid " style="width: 60%;"
-                        src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
-                        alt="test">
+                    <img class="img-fluid " style="width: 60%;" :src="getImgBottom1" alt="test">
 
                 </div>
                 <div class="col-4" style="background-color: red;">
-                    <img class="img-fluid" style="width: 60%;"
-                        src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
-                        alt="test">
+                    <img class="img-fluid" style="width: 60%;" :src="getImgBottom2" alt="test">
 
                 </div>
                 <div class="col-4" style="background-color: red;">
-                    <img class="img-fluid" style="width: 60%;"
-                        src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
-                        alt="test">
-
+                    <img class="img-fluid" style="width: 60%;" :src="getImgBottom3" alt="test">
                 </div>
 
 
@@ -82,12 +75,13 @@ export default {
     },
     computed: {
         ...mapGetters({
-            'getCurrentProduct': 'product/getCurrentProduct'
+            'getCurrentProduct': 'product/getCurrentProduct',
+            'getImgBottom1': 'product/getImgBottom1',
+            'getImgBottom2': 'product/getImgBottom2',
+            'getImgBottom3': 'product/getImgBottom3',
         })
     },
     created() {
-
-
     },
     methods: {
         /*ACTIONS
