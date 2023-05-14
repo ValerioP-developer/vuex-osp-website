@@ -13,32 +13,37 @@
                     <img style="width: 100%;"
                         src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
                         alt="test">
-
                 </div>
                 <div class="col-md-6">
-                    <div class="flex-direction:column">
-                        <p>
-                            What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
-                            enough
-                            to want to explore. That was the problem. There was always one that let fear rule her life.
-                            What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
-                            enough
-                            to want to explore. That was the problem. There was always one that let fear rule her life.
-                            What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
-                            enough
-                            to want to explore. That was the problem. There was always one that let fear rule her life.
+                    <p>
+                        What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
+                        enough
+                        to want to explore. That was the problem. There was always one that let fear rule her life.
+                        What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
+                        enough
+                        to want to explore. That was the problem. There was always one that let fear rule her life.
+                        What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
+                        enough
+                        to want to explore. That was the problem. There was always one that let fear rule her life.
 
-                        </p>
-                    </div>
-                    <div class="flex-direction:column">
-                        <button type="button" v-on:click="counter += 1" class="btn btn-warning">+</button>
-                        <span class="btn"> {{ counter }}</span>
-                        <button type="button" v-on:click="counter -= 1" class="btn btn-warning">-</button>
-                        <StripeCheckout :item=getCurrentProduct :quantity=counter></StripeCheckout>
-                    </div>
+                    </p>
+
                 </div>
             </div>
-            <div class="row ">
+            <div class="row">
+                <div class="col-md-6">
+                </div>
+                <div class="col-md-3 col-sm-6 col-6">
+                    <button type="button" v-on:click="counter += 1" class="btn btn-warning">+</button>
+                    <span class="btn"> {{ counter }}</span>
+                    <button type="button" v-on:click="counter -= 1" class="btn btn-warning">-</button>
+                </div>
+                <div class="col-md-3  col-sm-6 col-6">
+                    <StripeCheckout :item=getCurrentProduct :quantity=counter></StripeCheckout>
+                </div>
+            </div>
+
+            <div class="row " style="margin-top:10%">
                 <div class="col-4" style="background-color: red;">
                     <img class="img-fluid " style="width: 60%;" :src="getImgBottom1" alt="test">
 
@@ -50,8 +55,6 @@
                 <div class="col-4" style="background-color: red;">
                     <img class="img-fluid" style="width: 60%;" :src="getImgBottom3" alt="test">
                 </div>
-
-
             </div>
         </div>
 
