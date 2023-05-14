@@ -8,14 +8,11 @@
                 <div class="col-md-6" v-for="item in getPosts" :key="item.id">
                     <div class="card">
                         <img src="../assets/watch.jpg" alt="Denim Jeans" style="width:100%">
-                        <h3>{{ item.title }}</h3>
-                        <p>Post Description</p>
-                        <p> Post Date </p>
+                        <h3>{{ item.title }} <span style="font-size:18px;"> ({{ item.date }}) </span>
+                        </h3>
                         <p>
-                            Content : this is a content bla blaa blaaaa
-                            flkasjlfajs jklasdjflkj sjalksfjdl ksalajsf
-                            sjalkfs klasdjflkj alksfjlk lkasjfl asdlk
-                            <button v-on:click="updateCurrentItem(item)">More info</button>
+                            {{ item.description }}
+                            <a href="#" v-on:click="updateCurrentItem(item)">More info ...</a>
                         </p>
                     </div>
                 </div>
