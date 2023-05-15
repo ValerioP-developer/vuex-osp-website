@@ -2,7 +2,6 @@
     <div>
         <TopContainer> </TopContainer>
         <div class="container">
-
             <Loader :loading="showLoader" />
             <div class="row">
                 <div class="col-md-6" v-for="item in getPosts" :key="item.id">
@@ -16,24 +15,7 @@
                         </p>
                     </div>
                 </div>
-            </div><!--
-        <ul class="flex-container">
-            <li v-for="item in getPosts" :key="item.id" class="flex-item">
-                <div class="card">
-                    <img src="../assets/watch.jpg" alt="Denim Jeans" style="width:100%">
-                    <h3>{{ item.title }}</h3>
-                    <p>Post Description</p>
-                    <p> Post Date </p>
-                    <p>
-                        Content : this is a content bla blaa blaaaa
-                        flkasjlfajs jklasdjflkj sjalksfjdl ksalajsf
-                        sjalkfs klasdjflkj alksfjlk lkasjfl asdlk
-                    </p>
-                </div>
-            </li>
-           <li v-if="listItems.length === 0" class="flex-item center">No Record Found</li>
-        <li v-if="listItems.length === 0" class="flex-item center">No Record Found</li> 
-        </ul>-->
+            </div>
             <Pagination v-if="listItems" :total-pages="totalPages" :per-page="recordsPerPage" :current-page="page"
                 @pagechanged="onPageChange" />
         </div>

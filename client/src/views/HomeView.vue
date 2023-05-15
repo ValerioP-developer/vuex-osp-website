@@ -165,8 +165,6 @@ h1 {
   #txt-row3-col2 {
     margin-top: 5%;
   }
-
-
 }
 
 @media (min-width: 767px) {
