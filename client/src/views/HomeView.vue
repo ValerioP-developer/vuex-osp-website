@@ -44,13 +44,9 @@
           <h3 id="txt-row3-col2"> {{ geTxtRow3Col2 }}</h3>
         </div>
       </div> <!-- end 3 row #################################### -->
-      <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
-        <div class="container text-center">
-          <small>Copyright &copy; Your Website</small>
-        </div>
-      </footer>
-    </div>
 
+    </div>
+    <BottomContainer></BottomContainer>
   </div>
 </template>
 <script src="https://js.stripe.com/v3/"></script>   
@@ -60,11 +56,13 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import StripeCheckout from '@/components/StripeCheckout.vue'
 import TopContainer from '@/components/TopContainer.vue'
 import {mapGetters ,mapActions} from 'vuex';
+import BottomContainer from '@/components/BottomContainer.vue'
 export default {
   name: 'HomeView',
   components: {
     HelloWorld,
-    TopContainer
+    TopContainer,
+    BottomContainer
   },
   data () {
     return {

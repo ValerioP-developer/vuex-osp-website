@@ -14,9 +14,10 @@
                         src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
                         alt="test">-->
                     <div class="card" style="background: transparent;border: none">
-                        <h2 class="card-title">{{ getCurrentPost.title }}</h2>
-                        <h4>({{ getCurrentPost.date }})</h4>
-                        <img class="card-img-top " style="width: 70%"
+                        <h2 class="card-title">{{ getCurrentPost.title }} <span style="font-size:18px;"> ({{
+                            getCurrentPost.date }})
+                            </span></h2>
+                        <img class="card-img-top " style="width: 70%;margin-top: 5%;"
                             src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
                             alt="Card image cap">
                         <div class="card-body">
@@ -31,16 +32,19 @@
                 </div>
             </div>
         </div>
+        <BottomContainer></BottomContainer>
     </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import TopContainer from '@/components/TopContainer.vue'
+import BottomContainer from '@/components/BottomContainer.vue'
 export default {
     name: 'SelectedProductView',
     components: {
-        TopContainer
+        TopContainer,
+        BottomContainer
     },
     data() {
         return {
@@ -82,5 +86,9 @@ export default {
 
 </script>
 
-<style lang="scss"  scoped></style>
+<style lang="scss"  scoped>
+.card-title {
+    margin-top: 5%;
+}
+</style>
 

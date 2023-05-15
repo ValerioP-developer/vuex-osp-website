@@ -18,7 +18,9 @@
             </div>
             <Pagination v-if="listItems" :total-pages="totalPages" :per-page="recordsPerPage" :current-page="page"
                 @pagechanged="onPageChange" />
+
         </div>
+        <BottomContainer></BottomContainer>
     </div>
 </template>
   
@@ -28,11 +30,13 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
 import Pagination from '@/components/PaginationView.vue'
 import Loader from '@/components/LoaderView.vue'
 import TopContainer from '@/components/TopContainer.vue'
+import BottomContainer from '@/components/BottomContainer.vue'
 export default {
     components: {
         Pagination,
         Loader,
-        TopContainer
+        TopContainer,
+        BottomContainer
     },
     data() {
         return {

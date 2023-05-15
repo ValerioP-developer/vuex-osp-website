@@ -25,9 +25,7 @@
                         What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
                         enough
                         to want to explore. That was the problem. There was always one that let fear rule her life.
-
                     </p>
-
                 </div>
             </div>
             <div class="row">
@@ -57,7 +55,7 @@
                 </div>
             </div>
         </div>
-
+        <BottomContainer></BottomContainer>
     </div>
 </template>
 
@@ -65,10 +63,12 @@
 import { mapGetters } from 'vuex';
 import StripeCheckout from '@/components/StripeCheckout.vue'
 import TopContainer from '@/components/TopContainer.vue'
+import BottomContainer from '@/components/BottomContainer.vue'
 export default {
     name: 'SelectedProductView',
     components: {
         TopContainer,
+        BottomContainer,
         StripeCheckout
     },
     data() {
@@ -110,5 +110,11 @@ export default {
 
 </script>
 
-<style lang="scss"  scoped></style>
+<style lang="scss"  scoped>
+.card:hover {
+    box-shadow: 8px 8px 5px blue;
+    transform: scale(1.1);
+
+}
+</style>
 
