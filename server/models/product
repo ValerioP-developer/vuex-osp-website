@@ -28,6 +28,10 @@ var productSchema = new Schema({
     type: String,
     required: true
   },
+  amzlink: {
+    type: String,
+    required: true
+  },
 });
 
 // Create model from the schema

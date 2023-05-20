@@ -12,7 +12,10 @@
       <div class="row common-margin">
         <div class="col-md-6 col-sm-12 row1-col1">
           <p> <span class="txt-row1">{{ getTxtRow1Col1 }}</span>
-            <img id="img-row1-col1" :src="getImgRow1Col1" alt="test">
+            <!--<img id="img-row1-col1" :src="getImgRow1Col1" alt="test">-->
+            <a href="https://www.amazon.com/dp/B09CYL1C2X?pd_rd_i=B09CYL1C2X&pd_rd_w=Kxeri&content-id=amzn1.sym.69ca2181-e709-4fb6-8519-6d92fc9fe017&pf_rd_p=69ca2181-e709-4fb6-8519-6d92fc9fe017&pf_rd_r=DYKESRT0GASYEMYE2X0P&pd_rd_wg=QDHSd&pd_rd_r=a3d1a57c-cd6c-47c3-b9d1-d34269806d70&s=electronics&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&smid=A1I6K2WI6BM9L1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFPQ0I2Sk0zR0k1Q1kmZW5jcnlwdGVkSWQ9QTA3MjQ1NzRRRkM4UkVaTTdLRUkmZW5jcnlwdGVkQWRJZD1BMDA3Mjc5NzJDRjRZRzBCVlpCMzkmd2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWMmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&th=1&linkCode=li2&tag=pvl1-20&linkId=7407c9007163846dc698ce868451e2db&language=en_US&ref_=as_li_ss_il"
+              target="_blank"><img border="0"
+                src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09CYL1C2X&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=pvl1-20&language=en_US"></a>
           </p>
         </div>
         <div class="col-md-6 col-sm-12 row1-col2">

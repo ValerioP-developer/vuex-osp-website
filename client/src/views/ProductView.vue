@@ -5,18 +5,16 @@
       <Loader :loading="showLoader" />
       <div class="row">
         <div class="col-md-3" v-for="item in getProducts" :key="item.id">
-          <div class="card">
-            <img src="../assets/watch.jpg" alt="Denim Jeans" style="width:100%;">
-            <h3>{{ item.name }}</h3>
-            <p class="price">$19.99</p>
-            <p>{{ item.description }}</p>
-            <p>{{ item.quantity }}</p>
-            <p>
-              <!--<StripeCheckout :item=item :quantity=number></StripeCheckout> -->
-              <!--   <router-link to="/selected-product"> more info </router-link>-->
-              <button v-on:click="updateCurrentItem(item)">More info</button>
-            </p>
-          </div>
+          <a :href="item.amzlink" v-on:click="updateCurrentItem(item)">
+            <div class="card">
+              <img :src="item.img" alt="Denim Jeans" style="width:100%;">
+              <h3>{{ item.name }}</h3>
+              <p class="price">$19.99</p>
+              <p>{{ item.description }}</p>
+              <p>{{ item.quantity }}</p>
+
+            </div>
+          </a>
         </div>
       </div>
       <Pagination v-if="listItems" :total-pages="totalPages" :per-page="recordsPerPage" :current-page="page"

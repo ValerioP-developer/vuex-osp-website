@@ -40,6 +40,10 @@
                     <StripeCheckout :item=getCurrentProduct :quantity=counter></StripeCheckout>
                 </div>
             </div>
+            <div class="row">
+                <a href="#" @click="back"> <img style="transform:rotate(180deg);width: 10%;float: left;margin-top: 5%;"
+                        src="http://clipart-library.com/images/qiBAkbnoT.png" alt="test"></a>
+            </div>
 
             <div class="row " style="margin-top:10%">
                 <div class="col-4" style="background-color: red;">
@@ -87,6 +91,9 @@ export default {
     created() {
     },
     methods: {
+        back() {
+            this.$router.push('/products')
+        }
         /*ACTIONS
         //...mapActions({ 'actionTotalProducts': 'product/actionTotalProducts' }),
         //...mapActions({ 'actionTotalPosts': 'blog/actionTotalPosts' }),
