@@ -19,7 +19,8 @@ exports.createProduct=async (req,res)=> {
       description:req.body.description,
       category:req.body.category,
       price:req.body.price,
-      quantity:req.body.quantity
+      quantity:req.body.quantity,
+      img:req.body.img,
     });
        // console.log(req);
     await product.save()
