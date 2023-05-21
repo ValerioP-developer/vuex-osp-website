@@ -27,6 +27,7 @@ const state = {
     },*/
   ],
   currentPost: {},
+  mainTxt: "BLOG MAIN TEXT DESCRIPTION",
 };
 //GETTERS
 const getters = {
@@ -41,6 +42,10 @@ const getters = {
   //GET CURRENT POST
   getCurrentPost: (state) => {
     return state.currentPost;
+  },
+  //GET CURRENT POST
+  getMainText: (state) => {
+    return state.mainTxt;
   },
 };
 //MUTATIONS

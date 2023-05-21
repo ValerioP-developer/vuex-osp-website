@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TopContainer> </TopContainer>
+        <TopContainer :route=route> </TopContainer>
         <div class="container">
             <Loader :loading="showLoader" />
             <div class="row">
@@ -49,6 +49,7 @@ export default {
             totalRecords: 0,
             recordsPerPage: 2,
             enterpageno: '',
+            route: 'blog'
         }
     },
     computed: {

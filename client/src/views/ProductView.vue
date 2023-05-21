@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopContainer> </TopContainer>
+    <TopContainer :route=route> </TopContainer>
     <div class="container">
       <Loader :loading="showLoader" />
       <div class="row">
@@ -12,7 +12,6 @@
               <p class="price">$19.99</p>
               <p>{{ item.description }}</p>
               <p>{{ item.quantity }}</p>
-
             </div>
           </a>
         </div>
@@ -55,6 +54,7 @@ export default {
       totalRecords: 0,
       recordsPerPage: 4,
       enterpageno: '',
+      route: 'product'
     }
   },
   computed: {

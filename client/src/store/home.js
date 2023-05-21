@@ -4,6 +4,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 const state = {
+  mainTxt: "HOME MAIN TEXT DESCRIPTION",
   txtRow1Col1: "title row1 col1",
   txtRow1Col2: "title row1 col2",
   txtTitleRow2Col2: "****** title Row2 Col2",
@@ -20,6 +21,9 @@ const state = {
 }; //GETTERS
 const getters = {
   //GET TOTAL PRODUCT ARRAY
+  getMainText: (state) => {
+    return state.mainTxt;
+  },
   getTxtRow1Col1: (state) => {
     return state.txtRow1Col1;
   },

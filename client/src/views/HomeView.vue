@@ -7,7 +7,7 @@
     <h2> TOTAL posts:{{ getTotalPosts }} </h2>
     <button @click="click()">Click</button>-->
 
-    <TopContainer> </TopContainer>
+    <TopContainer :route=route> </TopContainer>
     <div class="container">
       <div class="row common-margin">
         <div class="col-md-6 col-sm-12 row1-col1">
@@ -69,6 +69,7 @@ export default {
   },
   data () {
     return {
+      route: 'home'
      }
   },
   computed:{

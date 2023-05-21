@@ -9,6 +9,7 @@ import axios from "axios";
 Vue.use(Vuex);
 
 const state = {
+  mainTxt: "PRODUCT MAIN TEXTVDFAFSAFSDF",
   //TOTAL PRODUCTS FROM DB
   totalproducts: 0,
   //ARRAY USED TO LOAD PRODUCTS
@@ -29,6 +30,9 @@ const state = {
 };
 //GETTERS
 const getters = {
+  getMainText: (state) => {
+    return state.mainTxt;
+  },
   //GET TOTAL PRODUCT ARRAY
   getProducts: (state) => {
     return state.products;
