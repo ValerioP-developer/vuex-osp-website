@@ -3,7 +3,10 @@
         <TopContainer :route=route> </TopContainer>
         <div class="container">
             <Loader :loading="showLoader" />
-            <div class="row">
+            <div class="row  d-flex justify-content-center" style="margin-top:5%">
+                <h1> This is a title</h1>
+            </div>
+            <div class="row" style="margin-top:5%">
                 <div class="col-md-6" v-for="item in getPosts" :key="item.id">
                     <div class="card">
                         <img src="../assets/watch.jpg" alt="Denim Jeans" style="width:100%">

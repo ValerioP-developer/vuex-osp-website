@@ -4,13 +4,15 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 const state = {
-  mainTxt: "HOME MAIN TEXT DESCRIPTION",
-  txtRow1Col1: "title row1 col1",
-  txtRow1Col2: "title row1 col2",
-  txtTitleRow2Col2: "****** title Row2 Col2",
+  mainTxt: "Hey you!  Welcome to my blog ! Does it worth your time?",
+  mainTxt2:
+    "Depends... If you are courius about random exclusive contents. Definetly yes !",
+  txtRow1Col1: "Who am I?",
+  txtRow1Col2: "Be alway Curious to Explore ! New article",
+  txtTitleRow2Col2: "Why this blog? and what you can find?",
   txtRow2Col2:
-    "Row2Col2 ****** This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique. jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique. jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.",
-  txtRow3Col2: "******************* Title Row 3 Col2",
+    "Well it is my hobby - hope you can pick up info and advices to save your time and money :) In addition with interesting topics and products!",
+  txtRow3Col2: "******************* Title Row 3 Col2 *********************",
   imgRow1Col1:
     "https://media.gq-magazine.co.uk/photos/63495c79cda0e0ecb3900192/16:9/w_1920%2Cc_limit/owh_HP.jpg",
   imgRow1Col2:
@@ -23,6 +25,9 @@ const getters = {
   //GET TOTAL PRODUCT ARRAY
   getMainText: (state) => {
     return state.mainTxt;
+  },
+  getMainText2: (state) => {
+    return state.mainTxt2;
   },
   getTxtRow1Col1: (state) => {
     return state.txtRow1Col1;

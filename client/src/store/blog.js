@@ -27,7 +27,8 @@ const state = {
     },*/
   ],
   currentPost: {},
-  mainTxt: "BLOG MAIN TEXT DESCRIPTION",
+  mainTxt:
+    "Few articles that can help you to make better choices or expand your knowlodges.",
 };
 //GETTERS
 const getters = {

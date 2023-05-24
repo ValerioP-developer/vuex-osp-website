@@ -11,15 +11,19 @@
     <div class="container">
       <div class="row common-margin">
         <div class="col-md-6 col-sm-12 row1-col1">
-          <p> <span class="txt-row1">{{ getTxtRow1Col1 }}</span>
-            <!--<img id="img-row1-col1" :src="getImgRow1Col1" alt="test">-->
-            <a href="https://www.amazon.com/dp/B09CYL1C2X?pd_rd_i=B09CYL1C2X&pd_rd_w=Kxeri&content-id=amzn1.sym.69ca2181-e709-4fb6-8519-6d92fc9fe017&pf_rd_p=69ca2181-e709-4fb6-8519-6d92fc9fe017&pf_rd_r=DYKESRT0GASYEMYE2X0P&pd_rd_wg=QDHSd&pd_rd_r=a3d1a57c-cd6c-47c3-b9d1-d34269806d70&s=electronics&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&smid=A1I6K2WI6BM9L1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFPQ0I2Sk0zR0k1Q1kmZW5jcnlwdGVkSWQ9QTA3MjQ1NzRRRkM4UkVaTTdLRUkmZW5jcnlwdGVkQWRJZD1BMDA3Mjc5NzJDRjRZRzBCVlpCMzkmd2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWMmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&th=1&linkCode=li2&tag=pvl1-20&linkId=7407c9007163846dc698ce868451e2db&language=en_US&ref_=as_li_ss_il"
+          <h1> <span class="txt-row1">{{ getTxtRow1Col1 }}<br> </span></h1>
+          <!--<img id="img-row1-col1" :src="getImgRow1Col1" alt="test">-->
+          <!-- <a href="https://www.amazon.com/dp/B09CYL1C2X?pd_rd_i=B09CYL1C2X&pd_rd_w=Kxeri&content-id=amzn1.sym.69ca2181-e709-4fb6-8519-6d92fc9fe017&pf_rd_p=69ca2181-e709-4fb6-8519-6d92fc9fe017&pf_rd_r=DYKESRT0GASYEMYE2X0P&pd_rd_wg=QDHSd&pd_rd_r=a3d1a57c-cd6c-47c3-b9d1-d34269806d70&s=electronics&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&smid=A1I6K2WI6BM9L1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFPQ0I2Sk0zR0k1Q1kmZW5jcnlwdGVkSWQ9QTA3MjQ1NzRRRkM4UkVaTTdLRUkmZW5jcnlwdGVkQWRJZD1BMDA3Mjc5NzJDRjRZRzBCVlpCMzkmd2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWMmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&th=1&linkCode=li2&tag=pvl1-20&linkId=7407c9007163846dc698ce868451e2db&language=en_US&ref_=as_li_ss_il"
               target="_blank"><img border="0"
                 src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09CYL1C2X&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=pvl1-20&language=en_US"></a>
+           -->
+          <p>
+            A human being with several years of work experience in the IT, E-commerce, etc ...
           </p>
         </div>
         <div class="col-md-6 col-sm-12 row1-col2">
-          <p><span class="txt-row1">{{ getTxtRow1Col2 }}</span>
+          <p>
+            <span class="txt-row1" style="font-size: 25px;color: orange;">{{ getTxtRow1Col2 }}</span>
             <img id="img-row1-col2" :src="getImgRow1Col2" alt="test">
           </p>
         </div>
@@ -31,9 +35,9 @@
           </p>
         </div>
         <div class="col-md-6  row2-col2">
-          <p class="text-center">
-            <span> {{ getTitleRow2Col2 }}</span><br><br>
-            <span id="txt-row3-col2"> {{ getTxtRow2Col2 }}</span>
+
+          <h2><span> {{ getTitleRow2Col2 }}</span><br><br></h2>
+          <p class="text-center"> <span id="txt-row3-col2"> {{ getTxtRow2Col2 }}</span>
           </p>
         </div>
       </div> <!-- end 2 row #################################### -->
@@ -44,9 +48,14 @@
           </p>
         </div>
         <div class="col-md-9 col-sm-12">
-          <h3 id="txt-row3-col2"> {{ geTxtRow3Col2 }}</h3>
+          <!--<h3 id="txt-row3-col2"> {{ geTxtRow3Col2 }}</h3></h3>-->
+          <h3 id="txt-row3-col2"> Let's check it out these deals!Top niche selection always different.
+            Something looks interesting and you need it? Search and selection already done...Trust it and save your time
+            :)
+            <router-link to="/products">GO</router-link> !
+          </h3>
         </div>
-      </div> <!-- end 3 row #################################### -->
+      </div> <!-- #################################### end 3 row #################################### -->
 
     </div>
     <BottomContainer></BottomContainer>

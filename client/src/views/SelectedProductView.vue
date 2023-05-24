@@ -4,11 +4,12 @@
         <!-- {{ getCurrentProduct }}-->
         <div class="container">
             <div class="row  justify-content-center">
-                <h1> {{ getCurrentProduct.name }}</h1>
+                <h1> {{ getCurrentProduct.name }}</h1> <br>
+
             </div>
         </div>
         <div class="container">
-            <div class="row ">
+            <div class="row" style="margin-top:5%">
                 <div class="col-md-6" style="background-color: red;">
                     <img style="width: 100%;"
                         src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"

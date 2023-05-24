@@ -2,8 +2,11 @@
   <div>
     <TopContainer :route=route> </TopContainer>
     <div class="container">
+      <div class="row  d-flex justify-content-center" style="margin-top:5%">
+        <h1> This is a title</h1>
+      </div>
       <Loader :loading="showLoader" />
-      <div class="row">
+      <div class="row" style="margin-top:5%">
         <div class="col-md-3" v-for="item in getProducts" :key="item.id">
           <a :href="item.amzlink" v-on:click="updateCurrentItem(item)">
             <div class="card">

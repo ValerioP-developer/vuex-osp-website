@@ -9,7 +9,7 @@ import axios from "axios";
 Vue.use(Vuex);
 
 const state = {
-  mainTxt: "PRODUCT MAIN TEXTVDFAFSAFSDF",
+  mainTxt: "Enjoy the best convenient deals of the moment! ",
   //TOTAL PRODUCTS FROM DB
   totalproducts: 0,
   //ARRAY USED TO LOAD PRODUCTS
