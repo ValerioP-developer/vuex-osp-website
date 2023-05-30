@@ -7,14 +7,14 @@
       </div>
       <Loader :loading="showLoader" />
       <div class="row" style="margin-top:5%">
-        <div class="col-md-3" v-for="item in getProducts" :key="item.id">
+        <div class="col-md-3" v-for="item in getProducts" :key="item.id" style="margin-top:5%;">
           <a :href="item.amzlink" v-on:click="updateCurrentItem(item)">
             <div class="card">
-              <img :src="item.img" alt="Denim Jeans" style="width:100%;">
-              <h3>{{ item.name }}</h3>
-              <p class="price">$19.99</p>
-              <p>{{ item.description }}</p>
-              <p>{{ item.quantity }}</p>
+              <img :src="item.amzlink" id="img-product" alt="Denim Jeans">
+              <h4>{{ item.name.substring(0, 10) }}</h4>
+              <p>{{ item.description.substring(0, 40) + "..." }}</p>
+
+              <!--  <p>{{ item.quantity }}</p> -->
             </div>
           </a>
         </div>
@@ -35,6 +35,7 @@ import Loader from '@/components/LoaderView.vue'
 import TopContainer from '@/components/TopContainer.vue'
 //import Selected from '@/views/SelectedProductView.vue'
 import BottomContainer from '@/components/BottomContainer.vue'
+
 
 export default {
   components: {
@@ -57,7 +58,8 @@ export default {
       totalRecords: 0,
       recordsPerPage: 4,
       enterpageno: '',
-      route: 'product'
+      route: 'product',
+      st1: 'GeekforGeeks is a computer science portal fsdafsdfsdfdsfsdfdsfsd'
     }
   },
   computed: {
@@ -114,6 +116,13 @@ export default {
     },
     random() {
       this.randomNumber = Math.floor((Math.random() * 4) + 1);
+    },
+    filters: {
+      truncate: function (data, num) {
+        const reqdString =
+          data.split("").slice(0, num).join("");
+        return reqdString;
+      }
     }
   }
 }
@@ -167,6 +176,10 @@ ul li {
       display: initial;
       width: 200px;
     }
+
+    #img-product {
+      width: 80%;
+    }
   }
 
 }
@@ -191,9 +204,14 @@ ul li {
       text-align: center;
     }
 
+    /*
     img {
       display: initial;
       width: 200px;
+    }*/
+
+    #img-product {
+      width: 60%;
     }
   }
 
@@ -216,9 +234,10 @@ ul li {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     font-family: arial;
+
   }
 
   .price {
@@ -280,7 +299,7 @@ ul li {
 }
 
 .card:hover {
-  box-shadow: 8px 8px 5px green;
-  transform: scale(1.1);
+  box-shadow: red;
+  // transform: scale(1.1);
 }
 </style>

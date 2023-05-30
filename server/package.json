@@ -21,6 +21,7 @@
     "express-session": "^1.17.3",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.1",
-    "stripe": "^12.2.0"
+    "stripe": "^12.2.0",
+    "vue-truncate-filter": "^1.1.7"
   }
 }

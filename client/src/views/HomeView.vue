@@ -22,10 +22,10 @@
           </p>
         </div>
         <div class="col-md-6 col-sm-12 row1-col2">
-          <p>
-            <span class="txt-row1" style="font-size: 25px;color: orange;">{{ getTxtRow1Col2 }}</span>
-            <img id="img-row1-col2" :src="getImgRow1Col2" alt="test">
-          </p>
+
+          <span class="txt-row1" style="font-size: 25px;color: orange;">{{ getTxtRow1Col2 }}</span>
+          <img id="img-row1-col2" :src="getImgRow1Col2" alt="test">
+
         </div>
       </div> <!-- end 1 row #################################### -->
       <div class="row">
@@ -190,7 +190,8 @@ h1 {
   }
 
   #img-row1-col2 {
-    float: right;
+    float: center;
+    margin-top: 5%;
   }
 
   .row1-col1 {
