@@ -21,8 +21,10 @@
                             src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
                             alt="Card image cap">
                         <div class="card-body">
-                            <p class="text-center card-text" style="margin-left: 15%;margin-right: 15%;">{{
-                                getCurrentPost.content }}
+                            <p class="text-center card-text" style="margin-left: 15%;margin-right: 15%;">
+                                {{ getCurrentPost.content1 }}<br>
+                                {{ getCurrentPost.content2 }}<br>
+                                {{ getCurrentPost.content3 }}<br>
                                 <a href="#" @click="back"> <img
                                         style="transform:rotate(180deg);width: 10%;float: left;margin-top: 5%;"
                                         src="http://clipart-library.com/images/qiBAkbnoT.png" alt="test"></a>

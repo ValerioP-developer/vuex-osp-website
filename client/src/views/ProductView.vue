@@ -8,12 +8,13 @@
       <Loader :loading="showLoader" />
       <div class="row" style="margin-top:5%">
         <div class="col-md-3" v-for="item in getProducts" :key="item.id" style="margin-top:5%;">
-          <a :href="item.amzlink" v-on:click="updateCurrentItem(item)">
+          <!-- unfreeze For selling my own product functionality           
+            <a :href="item.amzlink" v-on:click="updateCurrentItem(item)">-->
+          <a :href="item.amzlink" target=”_blank”>
             <div class="card">
-              <img :src="item.amzlink" id="img-product" alt="Denim Jeans">
+              <img :src="item.img" id="img-product" alt="Test img">
               <h4>{{ item.name.substring(0, 10) }}</h4>
               <p>{{ item.description.substring(0, 40) + "..." }}</p>
-
               <!--  <p>{{ item.quantity }}</p> -->
             </div>
           </a>
@@ -110,10 +111,13 @@ export default {
         this.loadListItem()
       }
     },
+    /*  
+    //I need this method when I populate the database with my own product.
+    //Currently I don't need it because with affiliate marketing I send the user only to amazon
     updateCurrentItem(item) {
       this.setCurrentProduct(item);
       this.$router.push('/selected-product')
-    },
+    },*/
     random() {
       this.randomNumber = Math.floor((Math.random() * 4) + 1);
     },

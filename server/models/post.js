@@ -12,7 +12,15 @@ var postSchema = new Schema({
     type: String,
     required: true,
   },
-  content: {
+  content1: {
+    type: String,
+    required: true,
+  },
+  content2: {
+    type: String,
+    required: true,
+  },
+  content3: {
     type: String,
     required: true,
   },

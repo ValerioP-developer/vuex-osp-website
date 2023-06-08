@@ -13,7 +13,9 @@ exports.createPost = async (req, res) => {
   const post = new Post({
     title: req.body.title,
     description: req.body.description,
-    content: req.body.content,
+    content1: req.body.content1,
+    content2: req.body.content2,
+    content3: req.body.content3,
     date: req.body.date,
   });
   // console.log(req);
