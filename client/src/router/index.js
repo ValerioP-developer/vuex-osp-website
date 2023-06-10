@@ -7,6 +7,7 @@ import NewProductView from "../views/NewProductView.vue";
 import BlogView from "../views/BlogView.vue";
 import SelectedProduct from "../views/SelectedProductView.vue";
 import SelectedPost from "../views/SelectedPostView.vue";
+import AboutView from "../views/AboutView.vue";
 Vue.use(VueRouter);
 const routes = [
   {
@@ -14,12 +15,13 @@ const routes = [
     name: "home",
     component: HomeView,
   },
+  /*,
   {
     path: "/about",
     name: "about",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-  },
+      import(/* webpackChunkName: "about" "../views/AboutView.vue"),
+  },*/
   {
     path: "/login",
     name: "login",
@@ -53,6 +55,11 @@ const routes = [
     path: "/selected-post",
     name: "selected-post",
     component: SelectedPost,
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: AboutView,
   },
 ];
 const router = new VueRouter({

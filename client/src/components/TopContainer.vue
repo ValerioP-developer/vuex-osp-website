@@ -18,10 +18,14 @@
             {{ getMainText }}
           </H1>
         </div>
+        <div v-else-if="route == 'about'">
+          <img src="images/pvl-logo.jpg" id="profile" alt="logo">
+        </div>
         <!--
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
         <button @click="currentRouteName">click</button> -->
       </div>
+
     </div>
   </div>
 </template>
@@ -60,4 +64,9 @@ export default {
 
 </script>
 
-<style></style>
+<style>
+#profile {
+  border-radius: 50%;
+  width: 200px;
+}
+</style>
