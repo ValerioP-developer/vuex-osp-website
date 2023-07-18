@@ -55,6 +55,8 @@ export default {
       this.lineItems[0].quantity = this.quantity;
       //console.log(" **** *** lineItems " + this.lineItems[0].quantity);
       //console.log("After setting item price " + this.lineItems[0].price);
+      this.$cookies.set("quantity", this.quantity);
+      alert("test -> cookie browser" + this.$cookies.get("quantity"));
       this.$refs.checkoutRef.redirectToCheckout();
     },
   },
