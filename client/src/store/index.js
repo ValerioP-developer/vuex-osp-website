@@ -6,6 +6,7 @@ import profile from "./profile";
 import product from "./product";
 import blog from "./blog";
 import home from "./home";
+import stripe from "./stripe";
 
 export default new Vuex.Store({
   modules: {
@@ -13,5 +14,6 @@ export default new Vuex.Store({
     product,
     blog,
     home,
+    stripe
   },
 });

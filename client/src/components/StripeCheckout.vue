@@ -7,6 +7,7 @@
 </template>
 <script>
 import { StripeCheckout } from '@vue-stripe/vue-stripe';
+import { mapActions } from 'vuex';
 export default {
   components: {
     StripeCheckout,
@@ -46,18 +47,39 @@ export default {
     }) 
     }*/,
   methods: {
+    //FOR TEST PURPOSE ONLY 
+    ...mapActions({ 'actionPay': 'stripe/actionPay' }),
+    ...mapActions({ 'createToken': 'stripe/createToken' }),
+    ...mapActions({ 'createSubscription': 'stripe/createSubscription' }),
+    ...mapActions({ 'deleteSubscription': 'stripe/deleteSubscription' }),
+    //>>>> ############ NOTE: NEED TO ADD MAP ACTION FOR UPDATE SUBSCRIPTION FUNCTIONALITY #########
     submit() {
-      //You will be redirected to Stripe's secure checkout page
-      console.log("PRICE FROM item passed from outside component  " + this.item.price);
-      //Set localItems price
+      //VERSION 1 ********* SAFETY CHECKOUT WITH STRIPE SESSION CUSTOMER ********
+      //INITIALIZE ITEM WITH SELECTED PRODUCT VALUE
       this.lineItems[0].price = this.item.price;
-      console.log(" ***** *** passed quantity" + this.quantity);
-      this.lineItems[0].quantity = this.quantity;
-      //console.log(" **** *** lineItems " + this.lineItems[0].quantity);
-      //console.log("After setting item price " + this.lineItems[0].price);
-      this.$cookies.set("quantity", this.quantity);
-      alert("test -> cookie browser" + this.$cookies.get("quantity"));
-      this.$refs.checkoutRef.redirectToCheckout();
+      this.lineItems[0].quantity = this.item.quantity;
+      this.lineItems[0].name = this.item.name;
+      this.actionPay(this.lineItems[0]);
+      /* OTHERS FUNCTIONALITIES */
+      //this.createToken();
+      //this.createSubscription();
+      //this.deleteSubscription();
+      //*************************************************************** */
+
+      /*
+      //VERSION 2 ********* FAST CHECKOUT withOUR STRIPE SESSION CUSTOMER ********
+       //You will be redirected to Stripe's secure checkout page
+       console.log("PRICE FROM item passed from outside component  " + this.item.price);
+       //Set localItems price
+       this.lineItems[0].price = this.item.price;
+       console.log(" ***** *** passed quantity" + this.quantity);
+       this.lineItems[0].quantity = this.quantity;
+       //console.log(" **** *** lineItems " + this.lineItems[0].quantity);
+       //console.log("After setting item price " + this.lineItems[0].price);
+       this.$cookies.set("quantity", this.quantity);
+       alert("test -> cookie browser" + this.$cookies.get("quantity"));
+       this.$refs.checkoutRef.redirectToCheckout();
+       */
     },
   },
 
