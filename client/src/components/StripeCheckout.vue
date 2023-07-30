@@ -57,7 +57,9 @@ export default {
       //VERSION 1 ********* SAFETY CHECKOUT WITH STRIPE SESSION CUSTOMER ********
       //INITIALIZE ITEM WITH SELECTED PRODUCT VALUE
       this.lineItems[0].price = this.item.price;
-      this.lineItems[0].quantity = this.item.quantity;
+
+      this.lineItems[0].quantity = this.quantity;
+      alert(this.lineItems[0].quantity);
       this.lineItems[0].name = this.item.name;
       this.actionPay(this.lineItems[0]);
       /* OTHERS FUNCTIONALITIES */

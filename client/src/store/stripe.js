@@ -28,6 +28,7 @@ const actions = {
         {
           name: item.name,
           amount: item.price,
+          quantity: item.quantity
         },
         {
           headers: {
