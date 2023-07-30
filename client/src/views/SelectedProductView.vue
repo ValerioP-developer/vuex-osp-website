@@ -1,11 +1,9 @@
 <template>
     <div>
         <TopContainer> </TopContainer>
-        <!-- {{ getCurrentProduct }}-->
         <div class="container">
             <div class="row  justify-content-center">
-                <h1> {{ getCurrentProduct.name }}</h1> <br>
-
+                <h1> {{ selectedProduct.name }}</h1> <br>
             </div>
         </div>
         <div class="container">
@@ -17,15 +15,7 @@
                 </div>
                 <div class="col-md-6">
                     <p>
-                        What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
-                        enough
-                        to want to explore. That was the problem. There was always one that let fear rule her life.
-                        What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
-                        enough
-                        to want to explore. That was the problem. There was always one that let fear rule her life.
-                        What was beyond the bend in the stream was unknown. Both were curious, but only one was brave
-                        enough
-                        to want to explore. That was the problem. There was always one that let fear rule her life.
+                        {{ selectedProduct.description }}
                     </p>
                 </div>
             </div>
@@ -38,7 +28,7 @@
                     <button type="button" v-on:click="counter -= 1" class="btn btn-warning">-</button>
                 </div>
                 <div class="col-md-3  col-sm-6 col-6">
-                    <StripeCheckout :item=getCurrentProduct :quantity=counter></StripeCheckout>
+                    <StripeCheckout :item=selectedProduct :quantity=counter></StripeCheckout>
                 </div>
             </div>
             <div class="row">
@@ -79,11 +69,13 @@ export default {
     data() {
         return {
             counter: 1,
+            //The selected "item" from ProductView is saved in session after the click
+            selectedProduct: this.$session.get("item")
         }
     },
     computed: {
         ...mapGetters({
-            'getCurrentProduct': 'product/getCurrentProduct',
+            //'getCurrentProduct': 'product/getCurrentProduct',
             'getImgBottom1': 'product/getImgBottom1',
             'getImgBottom2': 'product/getImgBottom2',
             'getImgBottom3': 'product/getImgBottom3',
@@ -95,14 +87,6 @@ export default {
         back() {
             this.$router.push('/products')
         }
-        /*ACTIONS
-        //...mapActions({ 'actionTotalProducts': 'product/actionTotalProducts' }),
-        //...mapActions({ 'actionTotalPosts': 'blog/actionTotalPosts' }),
-         
-        click(){
-          this.actionPayClick();
-        }
-        */
     },
     props: {
         // THIS PROPERTY WILL BE INITIALIZED WITH A PRODUCT FROM AN EXTERNAL COMPONENT

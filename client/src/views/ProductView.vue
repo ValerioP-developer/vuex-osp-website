@@ -114,10 +114,11 @@ export default {
       }
     },
 
-    //I need this method when I populate the database with my own product.
-    //Currently I don't need it because with affiliate marketing I send the user only to amazon
     updateCurrentItem(item) {
+      //Set Current Product in centralized Store "store/product"
       this.setCurrentProduct(item);
+      //
+      this.$session.set("item", item);
       this.$router.push('/selected-product')
     },
     random() {
