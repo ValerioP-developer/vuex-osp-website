@@ -74,19 +74,29 @@ export default {
     })
   },
   created() {
-    this.loadListItem()
+    this.totalRecords = this.$session.get("totalRecords");
+    this.page = this.$session.get("page");
+    this.actionTotalProducts();
+    this.loadListItem();
   },
   methods: {
     //...mapMutations({ 'setLineItems': 'product/setLineItems' }),
     ...mapActions({ 'actionLoadListProduct': 'product/actionLoadListProduct' }),
     ...mapActions({ 'actionTotalProducts': 'product/actionTotalProducts' }),
     ...mapMutations({ 'setCurrentProduct': 'product/setCurrentProduct' }),
+    ...mapActions({ 'actionTotalProducts': 'product/actionTotalProducts' }),
+
     loadListItem() {
       this.totalRecords = this.getTotalProducts;
       console.log("total Product -->> " + this.totalRecords);
       this.totalPages = Math.ceil(this.totalRecords / this.recordsPerPage);
       console.log("total page -->> " + this.totalPages);
-      this.showLoader = true
+      this.showLoader = true;
+      //SAVE IN SESSION
+      this.$session.set("totalRecords", this.totalRecords);
+      this.$session.set("page", this.page);
+      this.$session.set("recordsPerPage", this.recordsPerPage);
+      this.$session.set("totalPages", this.totalPages);
       //console.log(this.recordsPerPage)
       if (this.actionLoadListProduct({ page: this.page, recordsPerPage: this.recordsPerPage, showLoader: this.showLoader })) {
         this.showLoader = false;
