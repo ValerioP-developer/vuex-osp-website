@@ -61,23 +61,29 @@ const actions = {
   actionLoadListPosts: (context, info) => {
     console.log(info);
     console.log(context);
-    console.log("action list posts in bloggg " + info.recordsPerPage);
     axios
-      .get(`${baseApiURL}/posts/${info.page}/${info.recordsPerPage}`)
+      .get(`${baseApiURL}/blog/${info.page}/${info.recordsPerPage}`, {
+        headers: {
+          Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
+        },
+      })
       .then((response) => {
         info.showLoader = false;
-        console.log("response posts " + response);
-        //listItems = response.data.products
         state.posts = response.data.posts;
-        console.log("posts iside actionloadPost " + state.posts[0].title);
         return true;
       });
   },
   actionTotalPosts: (context) => {
     console.log(context);
-    axios.get(`${baseApiURL}/totalposts`).then((response) => {
-      state.totalPosts = response.data;
-    });
+    axios
+      .get(`${baseApiURL}/blog/post`, {
+        headers: {
+          Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
+        },
+      })
+      .then((response) => {
+        state.totalPosts = response.data.total;
+      });
   },
 };
 

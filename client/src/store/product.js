@@ -69,7 +69,11 @@ const actions = {
     console.log(context);
     //this.showLoader = true
     axios
-      .get(`${baseApiURL}/${info.page}/${info.recordsPerPage}`)
+      .get(`${baseApiURL}products/${info.page}/${info.recordsPerPage}`, {
+        headers: {
+          Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
+        },
+      })
       .then((response) => {
         info.showLoader = false;
         //listItems = response.data.products
@@ -80,11 +84,17 @@ const actions = {
   },
   actionTotalProducts: (context) => {
     console.log(context);
-    axios.get(`${baseApiURL}/total`).then((response) => {
-      state.totalproducts = response.data;
-      // console.log( "total**** inside action" + state.totalproducts)
-      //return   state.totalproducts;
-    });
+    axios
+      .get(`${baseApiURL}products/product`, {
+        headers: {
+          Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
+        },
+      })
+      .then((response) => {
+        state.totalproducts = response.data.total;
+        console.log("total **** inside action" + response.data.total);
+        //return   state.totalproducts;
+      });
   },
 };
 /*
