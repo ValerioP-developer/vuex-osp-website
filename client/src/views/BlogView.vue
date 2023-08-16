@@ -63,6 +63,8 @@ export default {
         })
     },
     created() {
+        this.totalRecords = this.$session.get("totalRecordsPost");
+        this.page = this.$session.get("pagePost");
         this.loadListItem()
     },
     methods: {
@@ -75,7 +77,12 @@ export default {
             this.totalPages = Math.ceil(this.totalRecords / this.recordsPerPage);
             console.log("total page -->> " + this.totalPages);
             this.showLoader = true
-            //console.log(this.recordsPerPage)
+            //SAVE IN SESSION
+            this.$session.set("totalRecordsPost", this.totalRecords);
+            this.$session.set("pagePost", this.page);
+            //this.$session.set("recordsPerPage", this.recordsPerPage);
+            //this.$session.set("totalPages", this.totalPages);
+            //--------------------------------------
             if (this.actionLoadListPosts({ page: this.page, recordsPerPage: this.recordsPerPage, showLoader: this.showLoader })) {
                 this.showLoader = false;
             }
