@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { baseApiURL } from "@/config/env";
+//import { baseApiURL } from "@/config/env";
 import axios from "axios";
 /*const stripe = require("stripe")(
   "sk_test_51ILXLOImdHoREZzeCeqmjDi7zI0vWIT3WzYGh9DV9RFT3lebYQ1FkOb0oFjwreviwQjok8kZqvFc2FbcJJDClAYO00imWDSt3p"
@@ -69,11 +69,15 @@ const actions = {
     console.log(context);
     //this.showLoader = true
     axios
-      .get(`${baseApiURL}products/${info.page}/${info.recordsPerPage}`, {
-        headers: {
-          Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
-        },
-      })
+      // .get(`${baseApiURL}products/${info.page}/${info.recordsPerPage}`, {
+      .get(
+        `https://secure-savannah-16463-b4f854bc0e0d.herokuapp.com/v1/products/${info.page}/${info.recordsPerPage}`,
+        {
+          headers: {
+            Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
+          },
+        }
+      )
       .then((response) => {
         info.showLoader = false;
         //listItems = response.data.products
@@ -85,11 +89,15 @@ const actions = {
   actionTotalProducts: (context) => {
     console.log(context);
     axios
-      .get(`${baseApiURL}products/product`, {
-        headers: {
-          Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
-        },
-      })
+      //.get(`${baseApiURL}products/product`, {
+      .get(
+        `https://secure-savannah-16463-b4f854bc0e0d.herokuapp.com/v1/products/product`,
+        {
+          headers: {
+            Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
+          },
+        }
+      )
       .then((response) => {
         state.totalproducts = response.data.total;
         console.log("total **** inside action" + response.data.total);
