@@ -3,10 +3,6 @@ import Vuex from "vuex";
 import { baseApiURL } from "@/config/env";
 import axios from "axios";
 
-/*const stripe = require("stripe")(
-  "sk_test_51ILXLOImdHoREZzeCeqmjDi7zI0vWIT3WzYGh9DV9RFT3lebYQ1FkOb0oFjwreviwQjok8kZqvFc2FbcJJDClAYO00imWDSt3p"
-);*/
-
 Vue.use(Vuex);
 
 const state = {
