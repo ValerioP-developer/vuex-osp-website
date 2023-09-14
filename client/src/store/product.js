@@ -69,8 +69,7 @@ const actions = {
     console.log(context);
     //this.showLoader = true
     axios
-      .get(`${baseApiURL}products/${info.page}/${info.recordsPerPage}`, {
-        //  .get(       `https://secure-savannah-16463-b4f854bc0e0d.herokuapp.com/v1/products/${info.page}/${info.recordsPerPage}`,{
+      .get(`${baseApiURL}/products/${info.page}/${info.recordsPerPage}`, {
         headers: {
           Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
         },
@@ -86,8 +85,7 @@ const actions = {
   actionTotalProducts: (context) => {
     console.log(context);
     axios
-      .get(`${baseApiURL}products/product`, {
-        // .get(        `https://secure-savannah-16463-b4f854bc0e0d.herokuapp.com/v1/products/product`, {
+      .get(`${baseApiURL}/products/product`, {
         headers: {
           Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
         },
