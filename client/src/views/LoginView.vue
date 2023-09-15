@@ -25,12 +25,9 @@
 </template>
   
 <script>
-import SocialLogin from '@/components/SocialLogin'
+//import SocialLogin from '@/components/SocialLogin'
 export default {
-    name: 'loginView',
-    components: {
-        SocialLogin
-    }
+    name: 'loginView'
 }
 </script>
   
