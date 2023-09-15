@@ -1,61 +1,36 @@
 <template>
-    <div class="container">
-    <h1>Helloooo{{getUsername}}</h1>
-    <div class="row">
-        <div class="col-6">  
-    <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" v-model= "loginForm.username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp"    class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password"  v-model= "loginForm.password"  class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button  v-on:click="getLogin"   type="submit" class="btn btn-primary">Submit</button>
+    <div class="main-container">
+        <form>
+            <div class="box-container">
+                <h2 class="heading">Sign In</h2>
+                <div class="form-fields">
+                    <input id="email" name="email" type="text" placeholder="Email Address">
+                </div>
+                <div class="form-fields">
+                    <input id="password" name="password" type="text" placeholder="Password">
+                </div>
+                <div class="form-fields">
+                    <button class="signIn" name="commit" type="submit">
+                        Sign In
+                    </button>
+                </div>
+                <div class="login-choice"><span>or Sign In with</span></div>
+                <SocialLogin />
+            </div>
         </form>
+        <div class="footer">
+            <p>Don't have an account? <a href="/signup"> Create one now</a></p>
+        </div>
     </div>
-    </div>
-</div>
-    
 </template>
   
 <script>
-
-
-import { mapActions,mapGetters } from 'vuex';
-
-export default{
-  name: 'LoginView',
-  data(){
-     return {
-        loginForm:{
-            username:null,
-            password:null
-        }
-     }
-  },
-  computed : {
-    ...mapGetters({
-        'getUsername' : 'profile/getUsername'
-    })
-  },
-
-  methods:{
-    ...mapActions({  'actionProfile': 'profile/actionProfile'} ),
-    getLogin(){
-       //   console.log("Get call called", this.loginForm);
-          this.actionProfile(this.loginForm);
+import SocialLogin from '@/components/SocialLogin'
+export default {
+    name: 'loginView',
+    components: {
+        SocialLogin
     }
-  }
-  
 }
 </script>
-<style>
-
-</style>
+  
