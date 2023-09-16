@@ -63,8 +63,8 @@ export default {
         })
     },
     created() {
-        this.totalRecords = this.$session.get("totalRecordsPost");
-        this.page = this.$session.get("pagePost");
+        //this.totalRecords = this.$session.get("totalRecordsPost");
+        //this.page = this.$session.get("pagePost");
         this.loadListItem()
     },
     methods: {

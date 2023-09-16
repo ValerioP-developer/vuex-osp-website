@@ -74,8 +74,8 @@ export default {
     })
   },
   created() {
-    this.totalRecords = this.$session.get("totalRecords");
-    this.page = this.$session.get("page");
+    //this.totalRecords = this.$session.get("totalRecords");
+    //this.page = this.$session.get("page");
     this.actionTotalProducts();
     this.loadListItem();
   },
