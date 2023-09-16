@@ -7,15 +7,26 @@
                 <h1> This is a title</h1>
             </div>
             <div class="row" style="margin-top:5%">
-                <div class="col-md-6" v-for="item in getPosts" :key="item.id">
+                <div class="col-xs-12 col-sm-6" v-for="item in getPosts" :key="item.id">
                     <div class="card">
-                        <img src="../assets/watch.jpg" alt="Denim Jeans" style="width:100%">
-                        <h3>{{ item.title }} <span style="font-size:18px;"> ({{ item.date }}) </span>
-                        </h3>
-                        <p>
-                            {{ item.description }}
-                            <a href="#" v-on:click="updateCurrentItem(item)">More info ...</a>
-                        </p>
+                        <a class="img-card">
+                            <img
+                                src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" />
+                        </a>
+                        <div class="card-content">
+                            <h4 class="card-title">
+                                <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                                    {{ item.title }} <span style="font-size:18px;"> ({{ item.date }}) </span>
+                                </a>
+                            </h4>
+                            <p class="description-content">
+                                {{ item.description }} </p>
+                        </div>
+                        <div class="card-read-more">
+                            <a href="#" class="btn btn-link btn-block" v-on:click="updateCurrentItem(item)">
+                                Read More
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -63,8 +74,8 @@ export default {
         })
     },
     created() {
-        //this.totalRecords = this.$session.get("totalRecordsPost");
-        //this.page = this.$session.get("pagePost");
+        this.totalRecords = this.$session.get("totalRecordsPost");
+        this.page = this.$session.get("pagePost");
         this.loadListItem()
     },
     methods: {
@@ -126,6 +137,7 @@ h2 {
     text-align: center;
 }
 
+/*
 ul li {
     list-style-type: none;
 }
@@ -193,84 +205,63 @@ ul li {
 
 }
 
+*/
 
-.showItems {
-    display: inline-block;
-    margin-left: -35px;
-
-    li {
-        list-style-type: none;
-        display: inline-block;
-        margin-left: 10px;
-    }
-
-    /*** CARD ***/
-
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        max-width: 300px;
-        margin: auto;
-        padding: 10px;
-        text-align: center;
-        font-family: arial;
-    }
-
-    .price {
-        color: grey;
-        font-size: 22px;
-    }
-
-    .card button {
-        border: none;
-        outline: 0;
-        padding: 12px;
-        color: white;
-        background-color: #000;
-        text-align: center;
-        cursor: pointer;
-        width: 100%;
-        font-size: 18px;
-    }
-
-    .card button:hover {
-        opacity: 0.7;
-    }
-
-    .button {
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-    }
-
-    .button1 {
-        background-color: #4CAF50;
-    }
-
-    /* Green */
-
+.card {
+    display: block;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    transition: box-shadow .25s;
 }
 
-#btn-add {
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    background-color: orange;
+.card:hover {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#btn-add:hover {
-    background-color: green;
+.img-card {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    display: block;
+    overflow: hidden;
+}
+
+.img-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: all .25s ease;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-title {
+    margin-top: 0px;
+    font-weight: 700;
+    font-size: 1.65em;
+}
+
+.card-title a {
+    color: #000;
+    text-decoration: none !important;
+}
+
+.card-read-more {
+    border-top: 1px solid #D4D4D4;
+}
+
+.card-read-more a {
+    text-decoration: none !important;
+    padding: 10px;
+    font-weight: 600;
+    text-transform: uppercase
 }
 </style>
   
