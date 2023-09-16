@@ -102,11 +102,16 @@ export default {
      */
      this.actionTotalProducts();
      this.actionTotalPosts();
+     //new fix
+     this.actionLoadListProductReset();
+     this.actionLoadListPostsReset();
   },
   methods: {
       //ACTIONS
       ...mapActions({'actionTotalProducts': 'product/actionTotalProducts'}),
       ...mapActions({ 'actionTotalPosts': 'blog/actionTotalPosts' }),
+      ...mapActions({ 'actionLoadListProductReset': 'product/actionLoadListProductReset' }),
+      ...mapActions({ 'actionLoadListPostsReset': 'blog/actionLoadListPostsReset' }),
           /*
           ...mapActions({'actionPay': 'product/actionPay'}),
           ...mapActions({'actionPayClick': 'product/actionPayClick'}),

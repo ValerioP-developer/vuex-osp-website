@@ -54,6 +54,20 @@ const mutations = {
 };
 //ACTIONS
 const actions = {
+  actionLoadListPostsReset: (context) => {
+    console.log(context);
+    axios
+      .get(`${baseApiURL}/blog/${1}/${4}`, {
+        headers: {
+          Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
+        },
+      })
+      .then((response) => {
+        state.posts = response.data.posts;
+        console.log("FIRST TIME@@@@@@  Posts" + state.posts);
+        return true;
+      });
+  },
   actionLoadListPosts: (context, info) => {
     console.log(info);
     console.log(context);

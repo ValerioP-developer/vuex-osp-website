@@ -64,6 +64,22 @@ const mutations = {
 };
 //ACTIONS
 const actions = {
+  actionLoadListProductReset: (context) => {
+    console.log(context);
+    //this.showLoader = true
+    axios
+      .get(`${baseApiURL}/products/${1}/${4}`, {
+        headers: {
+          Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
+        },
+      })
+      .then((response) => {
+        //listItems = response.data.products
+        state.products = response.data.products;
+        console.log("FIRST TIME@@@@@@  PRODUCTS" + state.products);
+        return true;
+      });
+  },
   actionLoadListProduct: (context, info) => {
     console.log(info);
     console.log(context);
