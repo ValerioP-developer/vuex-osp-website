@@ -2,7 +2,13 @@
   <div>
     <stripe-checkout ref="checkoutRef" mode="payment" :pk="publishableKey" :line-items="lineItems"
       :success-url="successURL" :cancel-url="cancelURL" @loading="v => loading = v" />
-    <button @click="submit" class="btn btn-primary">Pay now!</button>
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary" v-on:click="counter -= 1">-</button>
+      <span class="btn"> {{ counter }}</span>
+      <button type="button" class="btn btn-secondary" v-on:click="counter += 1">+</button>
+      <button @click="submit" class="btn btn-danger">Buy</button>
+    </div>
   </div>
 </template>
 <script>
@@ -16,6 +22,7 @@ export default {
     this.publishableKey = "pk_test_51IqiLvAwvgPZiPtRnGACXbozCUC9pqyOjCn89fTkD08m88i5TIm8CSZLWjE1BftgHGXEJUdKdhwpylRnjIYrErJO0018yrJS9t";
     return {
       loading: false,
+      counter: 1,
       lineItems: [
         {
           price: '',
@@ -34,11 +41,12 @@ export default {
       default() {
         return {}
       }
-    },
+    }
+    /*,
     quantity: {
       default: 0,
       type: Number
-    }
+    }*/
   }
     /*,
     computed:{
@@ -54,12 +62,12 @@ export default {
     ...mapActions({ 'deleteSubscription': 'stripe/deleteSubscription' }),
     //>>>> ############ NOTE: NEED TO ADD MAP ACTION FOR UPDATE SUBSCRIPTION FUNCTIONALITY #########
     submit() {
+      //alert(this.counter);
       //VERSION 1 ********* SAFETY CHECKOUT WITH STRIPE SESSION CUSTOMER ********
       //INITIALIZE ITEM WITH SELECTED PRODUCT VALUE
       this.lineItems[0].price = this.item.price;
-
-      this.lineItems[0].quantity = this.quantity;
-      alert(this.lineItems[0].quantity);
+      alert(this.lineItems[0].price);
+      this.lineItems[0].quantity = this.counter;
       this.lineItems[0].name = this.item.name;
       this.actionPay(this.lineItems[0]);
       /* OTHERS FUNCTIONALITIES */

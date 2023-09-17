@@ -7,14 +7,15 @@
       </div>
       <Loader :loading="showLoader" />
       <div class="row" style="margin-top:5%">
-        <div class="col-md-3" v-for="item in getProducts" :key="item.id" style="margin-top:5%;">
+        <div class="col-md-3" v-for="item in  getProducts " :key="item.id" style="margin-top:5%;">
 
           <a v-on:click="updateCurrentItem(item)" target=”_blank”>
             <!-- <a :href="item.amzlink" target=”_blank”>
              unfreeze For selling with affiliate marketing  
             -->
+
             <div class="card">
-              <img :src="item.img" id="img-product" alt="Test img">
+              <img :src=item.img id="img-product" alt="Test img">
               <h4>{{ item.name.substring(0, 10) }}</h4>
               <p>{{ item.description.substring(0, 40) + "..." }}</p>
               <p>{{ item.quantity }}</p>

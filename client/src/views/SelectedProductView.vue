@@ -9,9 +9,8 @@
         <div class="container">
             <div class="row" style="margin-top:5%">
                 <div class="col-md-6" style="background-color: red;">
-                    <img style="width: 100%;"
-                        src="https://images.freeimages.com/images/large-previews/2e5/fireplace-with-fire-1639928.jpg"
-                        alt="test">
+                    <img style="width: 100%;" :src=selectedProduct.img alt="test">
+                    <StripeCheckout :item=selectedProduct></StripeCheckout>
                 </div>
                 <div class="col-md-6">
                     <p>
@@ -19,18 +18,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                </div>
-                <div class="col-md-3 col-sm-6 col-6">
-                    <button type="button" v-on:click="counter += 1" class="btn btn-warning">+</button>
-                    <span class="btn"> {{ counter }}</span>
-                    <button type="button" v-on:click="counter -= 1" class="btn btn-warning">-</button>
-                </div>
-                <div class="col-md-3  col-sm-6 col-6">
-                    <StripeCheckout :item=selectedProduct :quantity=counter></StripeCheckout>
-                </div>
-            </div>
+
             <div class="row">
                 <a href="#" @click="back"> <img style="transform:rotate(180deg);width: 10%;float: left;margin-top: 5%;"
                         src="http://clipart-library.com/images/qiBAkbnoT.png" alt="test"></a>
