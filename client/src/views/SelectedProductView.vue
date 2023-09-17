@@ -18,23 +18,41 @@
                     </p>
                 </div>
             </div>
-
-            <div class="row">
-                <a href="#" @click="back"> <img style="transform:rotate(180deg);width: 10%;float: left;margin-top: 5%;"
-                        src="http://clipart-library.com/images/qiBAkbnoT.png" alt="test"></a>
-            </div>
-
             <div class="row " style="margin-top:10%">
                 <div class="col-4" style="background-color: red;">
                     <img class="img-fluid " style="width: 60%;" :src="getImgBottom1" alt="test">
-
                 </div>
-                <div class="col-4" style="background-color: red;">
-                    <img class="img-fluid" style="width: 60%;" :src="getImgBottom2" alt="test">
 
+                <div class="col-8" style="background-color: red;">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="images-loopstudio/desktop/image-hero.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images-loopstudio/desktop/image-hero.jpg"
+                                    alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images-loopstudio/desktop/image-hero.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-4" style="background-color: red;">
-                    <img class="img-fluid" style="width: 60%;" :src="getImgBottom3" alt="test">
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <div>
+                    <a href="#" @click="back"> <img style="margin-top: 30%;width:80px;height:80px;" src="images/exit.png"
+                            alt="test"></a>
                 </div>
             </div>
         </div>
