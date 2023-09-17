@@ -7,7 +7,7 @@
       <button type="button" class="btn btn-secondary" v-on:click="counter -= 1">-</button>
       <span class="btn"> {{ counter }}</span>
       <button type="button" class="btn btn-secondary" v-on:click="counter += 1">+</button>
-      <button @click="submit" class="btn btn-danger">Buy</button>
+      <button @click="submit" class="btn btn-success">Buy</button>
     </div>
   </div>
 </template>
