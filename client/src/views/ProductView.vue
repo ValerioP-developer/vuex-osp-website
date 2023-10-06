@@ -75,8 +75,8 @@ export default {
     })
   },
   created() {
-    //this.totalRecords = this.$session.get("totalRecords");
-    //this.page = this.$session.get("page");
+    this.totalRecords = this.$session.get("totalRecordsProduct");
+    this.page = this.$session.get("pageProduct");
     this.actionTotalProducts();
     this.loadListItem();
   },
@@ -94,8 +94,8 @@ export default {
       console.log("total page -->> " + this.totalPages);
       this.showLoader = true;
       //SAVE IN SESSION
-      this.$session.set("totalRecords", this.totalRecords);
-      this.$session.set("page", this.page);
+      this.$session.set("totalRecordsProduct", this.totalRecords);
+      this.$session.set("pageProduct", this.page);
       this.$session.set("recordsPerPage", this.recordsPerPage);
       this.$session.set("totalPages", this.totalPages);
       //console.log(this.recordsPerPage)
