@@ -112,6 +112,28 @@ const actions = {
         //return   state.totalproducts;
       });
   },
+
+  decreaseProducts: (context, info) => {
+    var decrvalue = info.quantity * -1;
+    console.log("value to decrease -->" + decrvalue);
+    axios
+      .post(
+        `${baseApiURL}/products/decrproducts`,
+        {
+          name: info.name,
+          missingitems: decrvalue,
+        },
+        {
+          headers: {
+            Authorization: `System b24b3b0e-9257-466b-949e-8c0c3841eeb5`,
+          },
+        }
+      )
+      .then((response) => {
+        console.log("UPDATED PRODUCT *****" + response.data.product);
+        //return   state.totalproducts;
+      });
+  },
 };
 /*
    FUTURE UPDATE:

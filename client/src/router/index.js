@@ -8,6 +8,8 @@ import BlogView from "../views/BlogView.vue";
 import SelectedProduct from "../views/SelectedProductView.vue";
 import SelectedPost from "../views/SelectedPostView.vue";
 import AboutView from "../views/AboutView.vue";
+import PaymentInfo from "../views/PaymentInfo.vue";
+
 Vue.use(VueRouter);
 const routes = [
   {
@@ -60,6 +62,11 @@ const routes = [
     path: "/about",
     name: "about",
     component: AboutView,
+  },
+  {
+    path: "/payment",
+    name: "payment",
+    component: PaymentInfo,
   },
 ];
 const router = new VueRouter({
