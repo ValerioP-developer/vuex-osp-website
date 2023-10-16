@@ -75,6 +75,11 @@ export default {
     })
   },
   created() {
+    //This simple redirect to home in case of manual refresh from the user
+    if (this.$route.params.refresh != 0) {
+      this.$router.push('/')
+    }
+
     this.totalRecords = this.$session.get("totalRecordsProduct");
     this.page = this.$session.get("pageProduct");
     this.actionTotalProducts();

@@ -74,6 +74,10 @@ export default {
         })
     },
     created() {
+        if (this.$route.params.refresh != 0) {
+            this.$router.push('/')
+        }
+
         this.totalRecords = this.$session.get("totalRecordsPost");
         this.page = this.$session.get("pagePost");
         this.loadListItem()
